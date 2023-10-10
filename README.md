@@ -1,1 +1,2 @@
-# GRG-SWP
+# Angaben SWP
+
