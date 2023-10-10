@@ -16,7 +16,8 @@
 Erstelle eine html Datei, welche möglichst den angegebenen Screenshot
 (`Screenshot 2023-10-10 at 12-28-30 news.ORF.at.png`) "nachbaut". Bedenke, daß
 wir im Unterricht noch nicht alles gelernt haben, um eine exakte 1:1 Kopie der
-Seite in HTML herzustellen.
+Seite in HTML herzustellen. Verwende jedoch die besprochenen html Tags
+sinngemäß!
 
 Mach einfach, so gut Du es kannst.
 
