@@ -8,14 +8,29 @@ body {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-        "enter watch watch"
-        "number date date"
-        "analyze prime fib";
     grid-gap: 5px;
-    margin: 15px;
+    margin: 5px;
+}
+
+@media only screen and (min-width: 500px) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "enter watch watch"
+            "number date date"
+            "analyze prime fib";
+    }
+}
+@media screen and (max-width: 500px) {
+    main {
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "enter enter watch"
+            "number analyze date"
+            "prime prime fib";
+    }
 }
 #enter {
     grid-area: enter;
