@@ -1,32 +1,46 @@
-# 1AHWII SWP
+# 3AHWII SWP
 
-## PLF 1 am 12. Oktober 2023
+## Praktische Leistungsfestellung: Dienstag, 24. Oktober 2023
 
-## Aufgabe: Nachbau einer Website
+## Thema HTML und CSS: Nachbau einer Website
+
+Es sind jeweils eine `.html` sowie eine `.css` Datei zu erstellen, welche den
+angegebenen Screenshot (`Screenshot_ORF.png`) so präzise es Dir möglich ist,
+"nachbauen".
+
+Die angegebenen Dateien, beinhalten alle Inhalte , die Du dazu nötig sind.
 
 ### Angabe-Dateien und -Ordner
 
--   Screenshot 2023-10-10 at 12-28-30 news.ORF.at.png
--   inhalt.txt (enthält alle Texte die benötigt werden, und mehr)
+-   Screenshot_ORF.png
+-   inhalt.txt (enthält Texte)
 -   links.txt (enthält Links)
--   images (enthält alle Bilder, die benötigt werden)
+-   colors.txt (Farben)
+-   images/ (enthält Bilder)
 
-### Aufgabe
+### Aufgabe 1: HTML Struktur (13P)
 
-Erstelle eine html Datei, welche möglichst den angegebenen Screenshot
-(`Screenshot 2023-10-10 at 12-28-30 news.ORF.at.png`) "nachbaut". Bedenke, daß
-wir im Unterricht noch nicht alles gelernt haben, um eine exakte 1:1 Kopie der
-Seite in HTML herzustellen. Verwende jedoch die besprochenen html Tags
-sinngemäß!
+Verwandle die Angebene Datei "inhalt.txt" in eine syntaktisch richtige `html`
+Datei unter Verwendung der sog. "html5 semantic tags" (section, article, main,
+nav, usw.). Verwende Klassen, um danach gut stylen zu können. Beachte
+insbesondere, alle Inhalte des Originals zu übernehmen.
 
-Mach einfach, so gut Du es kannst.
+### Aufgabe 2: CSS Styling (16P)
 
-Verwende dabei die angegebenen Dateien, welche _alle_ Inhalte beinhalten, die Du
-dazu brauchst.
+Versehe nun mit Hilfe von CSS Attributen die Elemente und Klassen Deiner `html`
+Datei, um Farbe und Anordnung an das Original anzupassen.
 
-### Abgabe
+### Aufgabe 3: Anordnung der Bilder (3P)
+
+Verwende CSS Grid, umd die Bilder anzuordnen. Breite der Spalten: 171px, Höhe
+der Zeilen: 133px. `gap`: 5px;
+
+## Abgabe
 
 Stelle sicher, daß sich Dein Projekt nach Ende der Arbeit auf dem Laufwerk Z:
-befindet und melde Dich anschließend von dem Rechner ab!
+befindet und melde Dich anschließend von dem Rechner ab.  
+**NICHT HERUNTERFAHREN!**
 
-## Gutes Gelingen!
+### Gutes Gelingen!
+
+Maximal erreichbar: 32P, Schlüssel: 0-16/17-20/21-24/25-28/29-32
