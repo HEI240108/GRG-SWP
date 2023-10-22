@@ -1,8 +1,36 @@
 body {
-    max-width: 95vw;
     background-color: #5286c1;
+    display: grid;
+    width: 875px;
+    grid-template-columns: 171px auto;
+    font-family: Arial, Roboto, sans-serif;
+    color: #fff;
 }
 
+header {
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.header2 {
+    margin-bottom: 2em;
+    text-align: unset;
+}
+.news-span {
+    margin: 0px 85px;
+}
+.beside-svg {
+    position: relative;
+    bottom: 0.9em;
+    padding: 0px 7px;
+}
+nav ul li {
+    display: inline;
+    padding: 0px 9px;
+}
+nav ul {
+    background-color: #4371a3;
+}
 .darkback {
     background-color: #4371a3;
 }
@@ -16,21 +44,17 @@ footer {
     color: #222222;
 }
 .bildergrid {
-    justify-content: center;
-    max-width: 75vw;
-    margin-left: 10vw;
+    grid-column: 1/3;
     display: grid;
-    grid-template-columns: repeat(5, 160px);
-    grid-template-rows: repeat(2, 180px);
+    grid-template-columns: repeat(5, 171px);
+    grid-template-rows: repeat(2, 133px);
     grid-template-areas:
         "ape fli fli gert sch"
         "ape ver tis tis sch";
-    gap: 0.2em;
-    /* border: 0.2em solid red; */
+    gap: 5px;
 }
 .appell {
     grid-area: ape;
-    z-index: 3;
 }
 .flieger {
     grid-area: fli;
@@ -43,16 +67,7 @@ footer {
 }
 .verstappen {
     grid-area: ver;
-    /* border: 3px solid yellow; */
 }
 .tisch {
     grid-area: tis;
-}
-div img {
-    height: 100%;
-    object-fit: unset;
-}
-
-div.bild06 img {
-    width: 100%;
 }
