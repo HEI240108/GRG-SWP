@@ -7,7 +7,8 @@ body {
     background-color: #4371a3;
 }
 .newsback {
-background-color: #5a8bc4;}
+    background-color: #5a8bc4;
+}
 footer {
     background-color: #12375c;
 }
@@ -19,33 +20,33 @@ footer {
     max-width: 75vw;
     margin-left: 10vw;
     display: grid;
-    grid-template-columns: repeat(4, 15em) 17em;
-    grid-template-rows: 12em 15em;
+    grid-template-columns: repeat(5, 160px);
+    grid-template-rows: repeat(2, 180px);
     grid-template-areas:
-        "bild04 bild06 bild06 bild07 bild02"
-        "bild04 bild10 bild08 bild08 bild02";
+        "ape fli fli gert sch"
+        "ape ver tis tis sch";
     gap: 0.2em;
     /* border: 0.2em solid red; */
 }
-.bild04 {
-    grid-area: bild04;
+.appell {
+    grid-area: ape;
     z-index: 3;
 }
-.bild06 {
-    grid-area: bild06;
+.flieger {
+    grid-area: fli;
 }
-.bild07 {
-    grid-area: bild07;
+.gert {
+    grid-area: gert;
 }
-.bild02 {
-    grid-area: bild02;
+.scheich {
+    grid-area: sch;
 }
-.bild10 {
-    grid-area: bild10;
+.verstappen {
+    grid-area: ver;
     /* border: 3px solid yellow; */
 }
-.bild08 {
-    grid-area: bild08;
+.tisch {
+    grid-area: tis;
 }
 div img {
     height: 100%;
