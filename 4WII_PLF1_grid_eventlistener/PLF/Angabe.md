@@ -34,10 +34,12 @@ werden, wie den Screenshots zu entnehmen ist. Falls die Zahl des Nummerfeldes
 größer als 1 Million ist, soll auf beiden Ausgabefeldern der Text `zu groß`
 erscheinen und die Felder rot eingefärtbt werden.
 
-Hilfestellung: Beim Laden der Applikation kann man 2 Arrays aufbauen. Im ersten
-kann man alle Primzahlen `<=` 1 Million abspeichern und im anderen Array alle
-Fibonacci-Zahlen die `<=` 1 Million sind. Mit `fibArray.includes()` kann dann
-z.B. überprüft werden, ob es sich um eine Fibonacci-Zahl handelt.
+Hilfestellung 1: Beim Laden der Applikation kann man 2 Arrays aufbauen. Im
+ersten kann man alle Primzahlen `<=` 1 Million abspeichern und im anderen Array
+alle Fibonacci-Zahlen die `<=` 1 Million sind. Mit `fibArray.includes()` kann
+dann z.B. überprüft werden, ob es sich um eine Fibonacci-Zahl handelt.
+
+Hilfestellung 2: Überprüfe den Datentyp, den das Nummernfeld liefert!
 
 ### Aufgabe Styling (5P)
 
