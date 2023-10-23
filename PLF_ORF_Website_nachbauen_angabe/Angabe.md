@@ -8,7 +8,7 @@ Es sind jeweils eine `.html` sowie eine `.css` Datei zu erstellen, welche den
 angegebenen Screenshot (`Screenshot_ORF.png`) so präzise es Dir möglich ist,
 "nachbauen".
 
-Die angegebenen Dateien, beinhalten alle Inhalte , die Du dazu nötig sind.
+Die angegebenen Dateien beinhalten alle Inhalte, die Du dazu nötig sind.
 
 ### Angabe-Dateien und -Ordner
 
@@ -43,4 +43,4 @@ befindet und melde Dich anschließend von dem Rechner ab.
 
 ### Gutes Gelingen!
 
-Maximal erreichbar: 32P, Schlüssel: 0-16/17-20/21-24/25-28/29-32
+Maximal erreichbar: 32P, Schlüssel: 0-16/15-19/20/18-22/23-27/28-32
