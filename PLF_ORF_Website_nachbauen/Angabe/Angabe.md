@@ -9,6 +9,7 @@ angegebenen Screenshot (`Screenshot_ORF.png`) so präzise es Dir möglich ist,
 "nachbauen".
 
 Die angegebenen Dateien beinhalten alle Inhalte, die Du dazu nötig sind.
+Extrahiere diese und füge sie in Deinen Arbeitsordner ein.
 
 ### Angabe-Dateien und -Ordner
 
