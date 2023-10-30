@@ -1,10 +1,11 @@
 body {
     background-color: #5286c1;
-    display: grid;
+    /* display: grid; */
     width: 875px;
     grid-template-columns: 171px auto;
     font-family: Arial, Roboto, sans-serif;
     color: #fff;
+    margin: auto;
 }
 
 header {
@@ -70,4 +71,17 @@ footer {
 }
 .tisch {
     grid-area: tis;
+}
+.news-section {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.news-section > h2 {
+    color: #222222;
+    text-align: right;
+}
+.news-section li {
+    color: #ffffff;
+    list-style-type: none;
+    padding-top: 0.5em;
 }

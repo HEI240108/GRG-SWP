@@ -2,6 +2,7 @@
 "use strict";
 const watch = document.querySelector("#date");
 const fibs = allFibs();
+const main = document.querySelector("main");
 const primes = allPrimes();
 const analyze = document.querySelector("#analyze");
 const zahlFeld = document.querySelector("#zahlInput");
@@ -51,6 +52,7 @@ function updateResults() {
     isPrimFeld.innerHTML = "neither prime";
     isFibFeld.style.backgroundColor = colors[2];
     isFibFeld.innerHTML = "nor fibonacci";
+    main.style.border = "5px solid red";
     return;
 }
 
