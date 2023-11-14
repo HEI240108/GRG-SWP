@@ -44,4 +44,4 @@ befindet und melde Dich anschließend von dem Rechner ab.
 
 ### Gutes Gelingen!
 
-Maximal erreichbar: 32P, Schlüssel: 0-16/15-19/20/18-22/23-27/28-32
+Punkteschlüssel
