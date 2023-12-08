@@ -16,4 +16,5 @@ section.output {
 }
 section.output textarea {
     text-align: center;
+    width: 80%;
 }
