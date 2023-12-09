@@ -9,6 +9,11 @@
         "sourceType": "module"
     },
     "rules": {
-	    "no-unused-var": "off"
+        //"no-unused-var": "off",
+        "semi": ["error", "always"],
+        "indent": ["error", 4],
+        "quotes": ["error", "double"],
+        "no-eval": "off",
+        "camelcase": "off"
     }
 }

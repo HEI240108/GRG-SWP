@@ -6,10 +6,10 @@ const swap1 = document.getElementById("swap1");
 const swap2 = document.getElementById("swap2");
 const swap3 = document.getElementById("swap3");
 
-/////////////////////////////////////////////////// GLOBAL STUFF ///////////////////////////////////////////////////
+/// //////////////////////////////////////////////// GLOBAL STUFF ///////////////////////////////////////////////////
 
 function getInput(number, mode) {
-    element = allInputs[number - 1];
+    const element = allInputs[number - 1];
     if (mode === "eval") {
         return eval(element.value);
     }
@@ -47,11 +47,11 @@ swap3.addEventListener("click", () => {
 allUseButtons.forEach((b) => {
     console.log(b);
     b.addEventListener("click", (e) => {
-        input1.value = e.target.previousElementSibling.value;
+        getInput(1).value = e.target.previousElementSibling.value;
     });
 });
 
-/////////////////////////////////////////////////// BUTTONS ///////////////////////////////////////////////////
+/// //////////////////////////////////////////////// BUTTONS ///////////////////////////////////////////////////
 
 // button push
 const button_push = document.getElementById("button_push");
@@ -99,7 +99,7 @@ button_slice.addEventListener("click", slice);
 // button splice
 const button_splice = document.getElementById("button_splice");
 function splice() {
-    let x = getInput(1, "eval");
+    const x = getInput(1, "eval");
     x.splice(getInput(2, "eval"), getInput(3, "eval"), getInput(4, "eval"));
     output.publish(x);
 }
