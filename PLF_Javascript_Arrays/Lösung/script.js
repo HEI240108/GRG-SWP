@@ -8,7 +8,7 @@ const swap3 = document.getElementById("swap3");
 
 /// //////////////////////////////////////////////// GLOBAL STUFF ///////////////////////////////////////////////////
 
-function getInput(number, mode) {
+function getInput (number, mode) {
     const element = allInputs[number - 1];
     if (mode === "eval") {
         return eval(element.value);
@@ -27,7 +27,7 @@ output.publish = (arg) => {
 };
 
 // swap
-function swap(a, b) {
+function swap (a, b) {
     const first = getInput(a);
     const second = getInput(b);
     const tmp = first.value;
@@ -54,85 +54,85 @@ allUseButtons.forEach((b) => {
 /// //////////////////////////////////////////////// BUTTONS ///////////////////////////////////////////////////
 
 // button push
-const button_push = document.getElementById("button_push");
-function push() {
+const buttonPush = document.getElementById("button_push");
+function push () {
     const i1 = getInput(1, "eval");
     const i2 = getInput(2, "eval");
     i1.push(i2);
     output.publish(i1);
 }
-button_push.addEventListener("click", push);
+buttonPush.addEventListener("click", push);
 
 // button indexof
-const button_indexof = document.getElementById("button_indexof");
-function indexof() {
+const buttonIndexof = document.getElementById("button_indexof");
+function indexof () {
     const i1 = getInput(1, "eval");
     const i2 = getInput(2, "eval");
     output.publish(i1.indexOf(i2));
 }
-button_indexof.addEventListener("click", indexof);
+buttonIndexof.addEventListener("click", indexof);
 
 // button includes
 const buttonIncludes = document.getElementById("button_includes");
-function includes() {
+function includes () {
     console.log("includes");
     output.publish(getInput(1, "eval").includes(getInput(2, "eval")));
 }
 buttonIncludes.addEventListener("click", includes);
 
 // button reverse
-const button_reverse = document.getElementById("button_reverse");
-function reverse() {
+const buttonReverse = document.getElementById("button_reverse");
+function reverse () {
     output.publish(getInput(1, "eval").reverse());
 }
-button_reverse.addEventListener("click", reverse);
+buttonReverse.addEventListener("click", reverse);
 
 // button slice
-const button_slice = document.getElementById("button_slice");
-function slice() {
+const buttonSlice = document.getElementById("button_slice");
+function slice () {
     output.publish(
         getInput(1, "eval").slice(getInput(2, "eval"), getInput(3, "eval"))
     );
 }
-button_slice.addEventListener("click", slice);
+buttonSlice.addEventListener("click", slice);
 
 // button splice
-const button_splice = document.getElementById("button_splice");
-function splice() {
+const buttonSplice = document.getElementById("button_splice");
+function splice () {
     const x = getInput(1, "eval");
     x.splice(getInput(2, "eval"), getInput(3, "eval"), getInput(4, "eval"));
     output.publish(x);
 }
-button_splice.addEventListener("click", splice);
+buttonSplice.addEventListener("click", splice);
 
 // button map
-const button_map = document.getElementById("button_map");
-function map() {
+const buttonMap = document.getElementById("button_map");
+function map () {
     console.log("map");
     output.publish(getInput(1, "eval").map(getInput(2, "eval")));
 }
 
-button_map.addEventListener("click", map);
+buttonMap.addEventListener("click", map);
 
 // button filter
-const button_filter = document.getElementById("button_filter");
-function filter() {
+const buttonFilter = document.getElementById("button_filter");
+function filter () {
     output.publish(eval(getInput(1, "eval")).filter(getInput(2, "eval")));
 }
 
-button_filter.addEventListener("click", filter);
+buttonFilter.addEventListener("click", filter);
 
 // button split
-const button_split = document.getElementById("button_split");
-function split() {
+const buttonSplit = document.getElementById("button_split");
+function split () {
     output.publish(getInput(1, "eval").split(getInput(2, "eval")));
 }
 
-button_split.addEventListener("click", split);
+buttonSplit.addEventListener("click", split);
 
 // button join
 const buttonJoin = document.getElementById("button_join");
-function join() {
+function join () {
     output.publish(getInput(1, "eval").join(getInput(2, "eval")));
 }
 
@@ -140,14 +140,14 @@ buttonJoin.addEventListener("click", join);
 
 // button some
 const buttonSome = document.getElementById("button_some");
-function some() {
+function some () {
     output.publish(getInput(1, "eval").some(getInput(2, "eval")));
 }
 buttonSome.addEventListener("click", some);
 
 // button spread
 const buttonSpread = document.getElementById("button_spread");
-function spread() {
+function spread () {
     output.publish([...getInput(1, "eval"), ...getInput(2, "eval")]);
 }
 buttonSpread.addEventListener("click", spread);
