@@ -89,13 +89,21 @@ button_reverse.addEventListener("click", reverse);
 
 // button slice
 const button_slice = document.getElementById("button_slice");
+function slice() {
+    output.publish(
+        getInput(1, "eval").slice(getInput(2, "eval"), getInput(3, "eval"))
+    );
+}
+button_slice.addEventListener("click", slice);
+
 // button splice
 const button_splice = document.getElementById("button_splice");
+function splice() {
+    let x = getInput(1, "eval");
+    x.splice(getInput(2, "eval"), getInput(3, "eval"), getInput(4, "eval"));
+    output.publish(x);
+}
 button_splice.addEventListener("click", splice);
-
-// button of
-const button_of = document.getElementById("button_of");
-button_of.addEventListener("click", of);
 
 // button map
 const button_map = document.getElementById("button_map");
@@ -108,63 +116,38 @@ button_map.addEventListener("click", map);
 
 // button filter
 const button_filter = document.getElementById("button_filter");
+function filter() {
+    output.publish(eval(getInput(1, "eval")).filter(getInput(2, "eval")));
+}
+
 button_filter.addEventListener("click", filter);
 
 // button split
 const button_split = document.getElementById("button_split");
+function split() {
+    output.publish(getInput(1, "eval").split(getInput(2, "eval")));
+}
+
 button_split.addEventListener("click", split);
 
 // button join
 const buttonJoin = document.getElementById("button_join");
+function join() {
+    output.publish(getInput(1, "eval").join(getInput(2, "eval")));
+}
+
 buttonJoin.addEventListener("click", join);
 
 // button some
 const buttonSome = document.getElementById("button_some");
+function some() {
+    output.publish(getInput(1, "eval").some(getInput(2, "eval")));
+}
 buttonSome.addEventListener("click", some);
 
 // button spread
 const buttonSpread = document.getElementById("button_spread");
-buttonSpread.addEventListener("click", spread);
-
-function slice() {
-    output.publish(getInput(1).slice(getInput(2), getInput(3)));
-}
-
-function splice() {
-    output.publish(getInput(1).splice(getInput(2), getInput(3), getInput(4)));
-}
-
-function of() {
-    output.publish(
-        Array.of(getInput(1), getInput(2), getInput(3), getInput(4))
-    );
-}
-
-function filter() {
-    output.publish(
-        eval(getInput(1)).filter((element) => {
-            return element == getInput(2);
-        })
-    );
-}
-
-function split() {
-    output.publish(getInput(1).split(getInput(2)));
-}
-
-function join() {
-    output.publish(getInput(1).join(getInput(2)));
-}
-
-function some() {
-    output.publish(
-        getInput(1).some((element) => {
-            return element == getInput(2);
-        })
-    );
-}
-
 function spread() {
-    const [one, two, ...rest] = getInput(1);
-    output.publish(rest);
+    output.publish([...getInput(1, "eval"), ...getInput(2, "eval")]);
 }
+buttonSpread.addEventListener("click", spread);
