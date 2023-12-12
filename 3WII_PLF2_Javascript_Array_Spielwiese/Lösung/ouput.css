@@ -11,10 +11,12 @@ div.samples {
 section.output {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
+    width: max-content;
+    margin: 50px;
     gap: 2em;
 }
 section.output textarea {
     text-align: center;
-    width: 80%;
+    width: max-content;
 }
