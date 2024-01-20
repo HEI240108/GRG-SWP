@@ -1,0 +1,5 @@
+###
+POST https://grafg1.spengergasse.at/swp4
+Content-Type: application/json
+
+{"user": "grafg", "passwd": "1234"}

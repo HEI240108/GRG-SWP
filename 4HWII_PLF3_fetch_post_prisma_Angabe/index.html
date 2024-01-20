@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verify</title>
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="flex-container">
-    <div class="flex-container vertical">
+    <div class="flex-container">
         <label>Username:
             <input type="text" id="username" name="username">
         </label><br>
@@ -19,10 +19,8 @@
         </label><br>
         <input type="submit" value="Submit" onclick="submit()">
     </div>
-    <div>
-        <label>Result:
-            <p id="result">No Result yet</p>
-        </label>
+    <div id="outbox">
+        <pre id="result">No Result yet</pre>
     </div>
 </body>
 
