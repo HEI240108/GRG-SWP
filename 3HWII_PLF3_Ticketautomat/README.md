@@ -2,35 +2,38 @@
 
 ### 23. Jänner 2024, Lehrer: Georg Graf
 
-## Ticketautomat
+## Angabe Ticketautomat
 
 In dieser Übung soll ein Ticketautomat entstehen, als Klasse (class). Er hat
 folgende Eigenschaften:
 
--   Im constructor gibt man mit wieviel Restgeld (#einnahmenGesamt) ürsprünglich
-    drinnen sind.
+-   Im constructor gibt übergibt man, wieviel Geld (#einnahmenGesamt)
+    ürsprünglich drinnen ist (in €).
 -   Man kann Geld `einwerfen()`, dies erhöht das Feld `#eingeworfen`
--   Man kann das Ziel einstellen
--   Man kann die Anzahl der Fahrgäste einstellen
+-   Man kann das Fahrziel einstellen, in einem `select` Feld.
+-   Man kann die Anzahl der Fahrgäste einstellen (1-10)
 -   man kann den Button `ticketKaufen()` drücken, dann wird ein Ticket gedruckt.
 
-Fahrziele:
+Fahrziele und Preise:
 
 `{"Salzbug":30,"Innsbruck":45,"Klagenfurt":40,"Graz":25,"Bregenz":60}`
 
-## Aufgabe Klassen
+(Obigen String kannst Du in ein Objekt `ziele` speichern! `const ziele = {...}`)
 
-Erstelle für diese Aufgabe erstmal nur die Rümpfe der Methoden für die folgenden
-2 Klassen
+## Aufgabe Klassen Ticket und TicketAutomat
+
+Erstelle für diese Aufgabe die folgenden 2 Klassen:
 
 ```plantuml
 class TicketAutomat {
 - #einnahmenGesamt: Number
 - #eingeworfen: Number
-- #ziele (konstant, s.o.)
-- get einnahmenGesamt()
-- get eingeworfen()
+- #ziel
+- #anzahlPersonen
 + constructor(einnahmenInitial)
++ get einnahmenGesamt()
++ set einnahmenGesamt()
++ get eingeworfen()
 + einwerfen(Number)
 + zielEinstellen()
 + anzahlEinstellen()
@@ -39,12 +42,33 @@ class TicketAutomat {
 class Ticket {
 - #anzahlPersonen
 - #ziel
-+ construktor(anzahl, ziel)
++ constructor(anzahl, ziel, gegeben)
 + toString()
 }
+TicketAutomat -> Ticket
 ```
 
-Beispiel für ein Ticket:
+Im `constructor(einnahmenGesamt)` sollen ein paar Dinge passieren:
+
+-   this.einnahmenGesamt soll auf den gegebenen Wert gesetzt werden, indem
+    `setEinnahmenGesamt()` aufgerufen wird.
+-   this.eingeworfen auf 0.
+-   this.ziel auf `undefined`
+
+`zielEinstellen()` soll nur eines der oben genannten Ziele in die private
+Variable `ziel` speichern können.
+
+`anzahlEinstellen()` soll die Variable `#anzahlPersonen` setzen, sofern der
+übergebene Wert gültig ist.
+
+`ticketKaufen()` soll ein neues Ticket erstellen mit
+`let ticket = new Ticket (ziel, anzahlPersonen, gegeben)`, soferne der
+eingeworfene Betrag ausreicht. Im Fehlerfall - wie immer - soll eine Exception
+geworfen werden. mit `console.log(ticket.toString())` soll die Ausgabe auf die
+Konsole erfolgen. Der Ticketpreis soll die `#einnahmenGesamt` des Automaten
+entsprechend erhöhen.
+
+#### Beispiel für ein Ticket:
 
 ```text
 ===============================
@@ -59,6 +83,8 @@ gegeben: € 100.-
 Restgeld: € 10,-
 ===============================
 ```
+
+## Bonusufgabe html Benutzeroberfläche:
 
 Elemente der Benutzeroberfläche:
 
