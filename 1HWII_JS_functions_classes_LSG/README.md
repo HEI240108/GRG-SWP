@@ -7,9 +7,13 @@
 ```plantuml
 class Person {
 + name : String
-+ groesseM : Number
++ gender: String
 + gewichtKG : Number
-toString() : String
-getBmi() : Number
++ groesseM : Number
++ groesseCM() : Number
++ toString() : String
++ getBmi() : Number
 }
 ```
+
+-   foreach
