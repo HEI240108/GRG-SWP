@@ -5,5 +5,3 @@ Derzeit nur PLFs aus dem WS23/24
 Unterlagen in pos-fachgruppe/wmc
 
 das mit den branches ..
-
-neue zeile
