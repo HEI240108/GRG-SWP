@@ -1,2 +1,5 @@
 #!/bin/sh
-wget --mirror --convert-links --backup-converted --html-extension -o wget.log https://www.prisma.io/docs/orm
+# wget --mirror --convert-links --backup-converted --html-extension -o wget.log https://www.prisma.io/docs/orm
+#
+find . -type f -iname '*.html' | awk '{printf "xidel --html %s --xquery \047x:replace-nodes(/, //script, function ($e) {\042 \042})\047 --output-format=html > /tmp/f && mv /tmp/f %s\n", $0, $0}'
+# (pip to sh)
