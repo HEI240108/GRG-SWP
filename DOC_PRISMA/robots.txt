@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /dataguide/intro/example
-Disallow: /dataguide/dummy
-Disallow: /cloud
-
-Sitemap: https://www.prisma.io/sitemap.xml
