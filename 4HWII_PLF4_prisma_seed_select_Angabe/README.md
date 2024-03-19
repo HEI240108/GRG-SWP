@@ -7,8 +7,13 @@
 -   Dokus und Angabe auf den Desktop **verschieben**
 -   entpacken
 -   im MDN Doku Ordner "npm start" ausführen
+-   Prisma Doku kann einfach vom Filesystem aus mit dem Browser geöffnet werden.
 
 ### AngabeProjekt öffnen.
+
+Abhängigkeiten herunterladen
+
+-   npm i
 
 VSCode Plugins installieren
 
@@ -16,35 +21,36 @@ VSCode Plugins installieren
 -   prisma
 -   sqlite viewer
 
-Abhängigkeiten herunterladen
-
--   npm i
-
 ## Aufgaben
 
 ### Datenmodell Zoo
+
+Grundsätzlich sind die id-Felder mit `cuid` anzulegen!
 
 -   Zoo:
 -   -   Land
 -   -   Stadt (beide in faker.location),
 -   -   Adresse (location.streetAddress),
 -   -   baujahr (date.past)
+-   -   mehrere Abteilungen[]
 
--   Abteilung: faker.animal.type
--   -   Zoo
--   -   Name
+-   Abteilung:
+-   -   ein Zoo
+-   -   Name: faker.animal.type()
+-   -   mehrere Mitarbeiter[]
+-   -   mehrere Tiere[]
 
 -   Tier
 -   -   Art: Tipp: faker.animal['type']()
 -   -   Name person.firstName()
--   -   Abteilung
+-   -   eine Abteilung
 
 -   Mitarbeiter
 -   -   Name - gefaked
--   -   Abteilungen
+-   -   Abteilungen[]
 
 Erstelle dieses Datenmodell mithilfe von Prisma. Beachte die besprochene Groß-
-und Kleinschreibung Deiner Objekte, auch wenn die Angabe Fehler enthält.
+und Kleinschreibung Deiner Objekte, auch wenn die Angabe Fehler enthält (!).
 
 ### Seeden der Datenbank
 
