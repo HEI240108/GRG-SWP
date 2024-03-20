@@ -1,0 +1,18 @@
+{
+    "name": "1hwii_js_classes_faker_ang",
+    "version": "1.0.0",
+    "description": "",
+    "main": "test.js",
+    "scripts": {
+        "devlsg": "node --inspect test.js lsg",
+        "devplf": "node --inspect test.js",
+        "lsg": "node test.js lsg",
+        "plf": "node test.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@faker-js/faker": "^8.4.1"
+    }
+}
