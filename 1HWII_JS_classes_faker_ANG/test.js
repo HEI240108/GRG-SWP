@@ -1,7 +1,7 @@
 'use strict';
 let plfExp;
 if (process.argv[process.argv.length - 1] == 'lsg') {
-    console.log('import LÖsung');
+    console.log('running loesung');
     plfExp = require('./loesung');
 } else {
     plfExp = require('./plf');
@@ -69,7 +69,7 @@ function checkArtRasse() {
         .map((_) => new FakeTier())
         .forEach((_) => {
             if (!aTypes[_.art]?.has(_.rasse)) {
-                throw new Error(`"${_.rasse} ist keine Rasse von ${_.art}`);
+                throw new Error(`${_.rasse} ist keine Rasse von ${_.art}`);
             }
         });
 }
@@ -82,6 +82,13 @@ function checkFirstName() {
                     `${_.name} kommt nicht aus der faker bibliothek!`
                 );
             }
+        });
+}
+function print7Tiere() {
+    Array.from(new Array(7))
+        .map((_) => new FakeTier())
+        .forEach((_) => {
+            console.log(_.toString());
         });
 }
 function doAllTests() {
@@ -102,3 +109,4 @@ function doAllTests() {
 }
 
 doAllTests();
+print7Tiere();

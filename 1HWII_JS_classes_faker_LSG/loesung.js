@@ -11,6 +11,5 @@ class FakeTier {
         return `${this.name} is a ${this.art}, race: ${this.rasse}`;
     }
 }
-//class FakeTier {}
-console.log(new FakeTier() + '');
+
 module.exports = { FakeTier, fakerDE };
