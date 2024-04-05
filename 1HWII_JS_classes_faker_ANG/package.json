@@ -4,9 +4,9 @@
     "description": "",
     "main": "test.js",
     "scripts": {
-        "devlsg": "node --inspect test.js lsg",
+        "devlsg": "node  --preserve-symlinks --inspect test.js lsg",
         "devplf": "node --inspect test.js",
-        "lsg": "node test.js lsg",
+        "lsg": "node  --preserve-symlinks test.js lsg",
         "plf": "node test.js"
     },
     "keywords": [],

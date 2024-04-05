@@ -1,4 +1,8 @@
-check:
+check: loesungabsent
 
 loesungabsent:
-	test -f loesung.js && (echo "loesung ist DA"; false)
+	test -L loesung.js
+
+clean:
+	rm -rf node_modules
+	rm -f package-lock.json

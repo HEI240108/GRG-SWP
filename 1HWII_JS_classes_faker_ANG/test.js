@@ -2,7 +2,7 @@
 let plfExp;
 if (process.argv[process.argv.length - 1] == 'lsg') {
     console.log('running loesung');
-    plfExp = require('./loesung');
+    plfExp = require('./loesung.js');
 } else {
     plfExp = require('./plf');
 }

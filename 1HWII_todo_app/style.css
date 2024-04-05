@@ -1,0 +1,14 @@
+body {
+    background: lightgoldenrodyellow;
+    color: rgb(84, 28, 4);
+    display: grid;
+}
+* {
+    margin: 0.25em auto;
+}
+li p {
+    display: inline;
+}
+li {
+    list-style: none;
+}
