@@ -1,15 +1,31 @@
 // 1. APPLICATION STATE
 // - Holds the state of the application
 // - This is the single source of truth for the application  state
-const state = {
-    todos: [
-        { text: 'German', completed: false },
-        { text: 'English', completed: true },
-        { text: 'Hungarian', completed: false },
-        { text: 'Italian', completed: true },
-        { text: 'Portuguese', completed: false },
-    ],
-};
+const state = getState();
+// 2. STATE ACCESSORS/MUTATORS FN'S
+// - Functions that allow us to get and set the state
+// - Here we will create functions to add and remove todos
+function saveState() {
+    localStorage.setItem('state', JSON.stringify(state));
+}
+function getState() {
+    if (localStorage.hasOwnProperty('state')) {
+        try {
+            return JSON.parse(localStorage.getItem('state'));
+        } catch (e) {
+            localStorage.removeItem('state');
+        }
+    }
+    return {
+        todos: [
+            { text: 'German', completed: false },
+            { text: 'English', completed: true },
+            { text: 'Hungarian', completed: false },
+            { text: 'Italian', completed: true },
+            { text: 'Portuguese', completed: false },
+        ],
+    };
+}
 // 2. STATE ACCESSORS/MUTATORS FN'S
 // - Functions that allow us to get and set the state
 // - Here we will create functions to add and remove todos
@@ -22,17 +38,24 @@ function getTodo(text) {
 function addTodo(text) {
     if (!todoTextExists(text)) {
         state.todos.push({ text, completed: false });
+        saveState();
     } else {
         console.warn(`${text} is already there`);
     }
 }
 function removeTodo(text) {
     const index = state.todos.findIndex((_) => _.text === text);
-    state.todos.splice(index, 1);
+    if (index >= 0) {
+        state.todos.splice(index, 1);
+        saveState();
+    }
 }
 function toggleTodoCompleted(text) {
     const todo = getTodo(text);
-    todo.completed = !todo.completed;
+    if (todo) {
+        todo.completed = !todo.completed;
+        saveState();
+    }
 }
 // 3. DOM Node Refs
 // - Static references to DOM nodes needed after the start of the application
