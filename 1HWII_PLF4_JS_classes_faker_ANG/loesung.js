@@ -1,0 +1,1 @@
+../1HWII_PLF4_JS_classes_faker_LSG/loesung.js

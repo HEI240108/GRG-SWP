@@ -4,7 +4,7 @@ if (process.argv[process.argv.length - 1] == 'lsg') {
     console.log('running loesung');
     plfExp = require('./loesung.js');
 } else {
-    plfExp = require('./plf');
+    plfExp = require('./plf.js');
 }
 const { FakeTier, fakerDE } = plfExp;
 

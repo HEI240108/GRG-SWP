@@ -1,8 +1,6 @@
 # 3AHWII, 3. Praktische Leistungsfeststellung
 
-### am 23. Jänner 2024, Lehrer: Georg Graf
-
-## Angabe Ticketautomat
+### 23. Jänner 2024, Lehrer: Georg Graf## Angabe Ticketautomat
 
 In dieser Übung soll ein Ticketautomat entstehen, als Klasse (class). Er hat
 folgende Eigenschaften:
