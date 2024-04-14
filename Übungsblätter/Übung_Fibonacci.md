@@ -5,17 +5,17 @@
 Die Fibonacci Zahlenfolge ist so definiert:
 
 1. Die ersten beiden Zahlen lauten `0` und `1`.
-2. Jede weitere Zahl in der Folge wird durch Addition ihrer Vorgänger gebildet.
+2. Jede weitere Zahl in der Folge wird durch Addition ihrer beiden Vorgänger gebildet.
 
-Daher folgt:
+Daher folgt (ganz links: indices des arrays):
 
 ```code
-0 + 1 =>  1  | 0, 1, 1
-1 + 1 =>  2  | 0, 1, 1, 2
-1 + 2 =>  3  | 0, 1, 1, 2, 3
-2 + 3 =>  5  | 0, 1, 1, 2, 3, 5
-3 + 5 =>  8  | 0, 1, 1, 2, 3, 5, 8
-5 + 8 => 13  | 0, 1, 1, 2, 3, 5, 8, 13
+2 | 0 + 1 =>  1 => [ 0, 1, 1 ]
+3 | 1 + 1 =>  2 => [ 0, 1, 1, 2 ]
+4 | 1 + 2 =>  3 => [ 0, 1, 1, 2, 3 ]
+5 | 2 + 3 =>  5 => [ 0, 1, 1, 2, 3, 5 ]
+6 | 3 + 5 =>  8 => [ 0, 1, 1, 2, 3, 5, 8 ]
+7 | 5 + 8 => 13 => [ 0, 1, 1, 2, 3, 5, 8, 13 ]
 ```
 
 ## Aufgabe 1: function getFib (n)
@@ -30,7 +30,7 @@ getFib(2) => 1
 getFib(6) => 8
 ```
 
-Schreibe diese Funktion!
+Implementiere diese Funktion!
 
 ## Aufgabe 2: Klasse Fib
 
@@ -41,8 +41,8 @@ erweitert das interne Array entsprechend und gibt dann die richtige Zahl zurück
 
 ```plantuml
 class Fib {
+- #fibArray: Number[]
 + constructor()
-+ fibArray: Number[]
 + getFib(n): Number
 }
 ```
