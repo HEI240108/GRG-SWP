@@ -23,5 +23,17 @@ class Frage {
         }
 }
 
-fragen.map(f => new Frage(f));
-module.exports = Frage
+function eulerZahl() {
+    let rw = 2;
+    let rw_alt;
+    for (let i = 2; i < 20; i++) {
+        rw_alt = rw;
+        let fact = 1;
+        for (let j = 2; j <= i; j++) {
+            fact *= j;
+        }
+        rw += 1 / fact
+    }
+    return rw;
+}
+module.exports = { Frage, eulerZahl }  // bleibt am Ende des Programm
