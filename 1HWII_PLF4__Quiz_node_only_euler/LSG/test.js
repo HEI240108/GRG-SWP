@@ -30,20 +30,25 @@ function checkOptionen() {
         const frg = new Frage(f);
         if (frg.optionen !== f.optionen) {
             throw new Error(
-                'Die Optinen des Objekts sind nicht die gleichen wie in der Frage'
+                'Die Optionen des Objekts sind nicht die gleichen wie in der Frage'
             );
         }
     });
 }
 function checkOptionenRW() {
     fragen.forEach((f) => {
+        let exceptionThrown = false;
         const frg = new Frage(f);
         try {
             frg.optionen = null;
+        } catch {
+            exceptionThrown = true;
+        }
+        if (!exceptionThrown) {
             throw new Error(
                 'Optionen setzen sollte mit Exception verhindert werden'
             );
-        } catch {}
+        }
     });
 }
 function checkFrage() {
