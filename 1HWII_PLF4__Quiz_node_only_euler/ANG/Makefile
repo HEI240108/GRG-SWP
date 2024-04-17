@@ -1,7 +1,12 @@
-angabe: deps clean check
-	zip -y -r ~/Downloads/angabe.zip .
+angabe: angabedeps clean check
+	zip -y -x Makefile reihe.png check.sh test.js lsg.js -r ~/Downloads/angabe.zip .
 
-deps: test-obfuscated.js lsg.js
+angabedeps: test-obfuscated.js PLF.pdf
+
+devdeps: lsg.js test.js
+
+PLF.pdf: PLF.md
+	false
 
 test-obfuscated.js: ../LSG/test.js
 	npx javascript-obfuscator '$^' -o $@
@@ -23,17 +28,17 @@ clean:
 check:
 	./check.sh
 
-run: deps
+run: devdeps
 	npm run lsg
 
-dev: lsg.js test.js
-	npm run devlsg
+dev: devdeps
+	npm run devlsg  # TODO move from package.json hereher
 
-devplf: lsg.js test.js
-	npm run devplf
+devplf: devdeps
+	npm run devplf # TODO move from package.json hereher
 
-plf: deps
-	npm start
+plf: devdeps
+	npm start # TODO move from package.json hereher
 
 
 

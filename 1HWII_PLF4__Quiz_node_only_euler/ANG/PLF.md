@@ -4,6 +4,18 @@
 
 ### Themen: Javascript Basics if/else, Schleifen, Klassen
 
+## Vorbemerkung
+
+1. *Verschieben Sie* alles vom Laufwerk `Z:\` auf den Desktop
+2. Entpacken Sie die Angabe-Datei
+3. Öffnen Sie diese mit dem Windows-Explorer
+4. Öffnen Sie den `PLF` Workspace der sich darin befindet.
+5. stellen Sie mittels `npm run` oder `package.json` fest, dass Sie öfters `npm start` bzw. `npm test` aufrufen werden
+6. Bearbeiten Sie die Datei `plf.js`.
+7. Lösen Sie die Aufgaben
+8. Schließen Sie vscode
+9. *Verschieben Sie* den Angabe-Ordner wieder auf Laufwerk `Z:\`.
+
 ## Aufgabe 1: gegeben ist folgendes UML Diagramm
 
 ... für eine Quiz-Anwendung:
@@ -38,8 +50,8 @@ In `package.json` unter "scripts" findet sich "start" und "test" zum Ausführen,
 
 Die Berechnung von *e* ist wie folgt definiert:
 
-![](./reihe.png)
+![euler](./reihe.png)
 
 Machen Sie aus `eulerZahl` eine `function`, welche in 20 Iterationen die Zahl berechnet und zurückgibt.
 
-### Gutes Gelingen!
+### Gutes Gelingen
