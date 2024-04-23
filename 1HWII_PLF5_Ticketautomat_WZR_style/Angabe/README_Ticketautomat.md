@@ -1,31 +1,31 @@
-# 1AHWII, 4. Praktische Leistungsfeststellung (WH)
+# 4AAIF, Praktische Leistungsfeststellung Javascript
 
-### am 10. April 2024, Lehrer: Georg Graf
+## am 25. April 2024, Andreas Chwatal / Georg Graf
 
-## Angabe Ticketautomat
+## Ticketautomat
 
 In dieser Übung soll ein Ticketautomat entstehen, als Klasse (class). Er hat
 folgende Eigenschaften:
 
 Es gibt 2 Geldfächer:
 
-1. #gesamtEingenommen
-2. #guthabenAktuellerKunde
+1. #gesamtEingenommen .. Dies ist der Speicher für alles eingenommene Geld, welches regelmäßig von Bahn-Mitarbeitern entnommen wird.
+2. #guthabenAktuellerKunde .. dies ist der "credit" des aktuellen Kunden
 
--   Im constructor gibt übergibt man, wieviel Geld (#gesamtEingenommen)
+- Im constructor gibt übergibt man, wieviel Geld (#gesamtEingenommen)
     ürsprünglich drinnen ist (in €).
--   Man kann Geld `einwerfen()`, dies erhöht das Feld `#guthabenAktuellerKunde`
--   Man kann das Fahrziel einstellen, in einem `select` Feld.
--   Man kann die Anzahl der Fahrgäste einstellen (1-10)
--   man kann den Button `ticketKaufen()` drücken, dann wird ein Ticket gedruckt.
+- Man kann Geld `einwerfen()`, dies erhöht das Feld `#guthabenAktuellerKunde`
+- Man kann das Fahrziel einstellen, in einem `select` Feld.
+- Man kann die Anzahl der Fahrgäste einstellen (1-10)
+- man kann den Button `ticketKaufen()` drücken, dann wird ein Ticket oder eine Fehlermeldung gedruckt.
 
 Fahrziele und Preise:
 
-`{"Salzbug":30,"Innsbruck":45,"Klagenfurt":40,"Graz":25,"Bregenz":60}`
+`{"Salzbug":30,"Innsbruck":45,"Klagenfurt":40,"Graz":25,"Bregenz":60, "Linz": 25}`
 
-(Obigen String kannst Du in ein Objekt `ziele` speichern! `const ziele = {...}`)
+(Obigen String können Sie in ein Objekt `ziele` speichern! `const ziele = {...}`)
 
-## Aufgabe Klassen Ticket und TicketAutomat
+## Aufgabe 1: Klassen Ticket und TicketAutomat
 
 Erstelle für diese Aufgabe die folgenden 2 Klassen:
 
@@ -54,12 +54,14 @@ class Ticket {
 TicketAutomat -> Ticket
 ```
 
-Im `constructor(gesamtEingenommen)` sollen ein paar Dinge passieren:
+Im `constructor(gesamtEingenommen)` sollen folgende Dinge passieren:
 
--   this.gesamtEingenommen soll auf den gegebenen Wert gesetzt werden, indem
+- `this.#gesamtEingenommen` soll auf den gegebenen Wert gesetzt werden, indem
     `setgesamtEingenommen()` aufgerufen wird.
--   this.eingeworfen auf 0.
--   this.ziel auf `undefined`
+- this.eingeworfen auf 0.
+- this.ziel auf `undefined`
+
+Weiters:
 
 `zielEinstellen()` soll nur eines der oben genannten Ziele in die private
 Variable `ziel` speichern können.
@@ -69,12 +71,12 @@ Variable `ziel` speichern können.
 
 `ticketKaufen()` soll ein neues Ticket erstellen mit
 `let ticket = new Ticket (ziel, anzahlPersonen, gegeben)`, soferne der
-eingeworfene Betrag ausreicht. Im Fehlerfall - wie immer - soll eine Exception
-geworfen werden. mit `console.log(ticket.toString())` soll die Ausgabe auf die
+eingeworfene Betrag ausreicht. Im Fehlerfall soll eine Exception
+geworfen werden. Mit `console.log(ticket.toString())` soll die Ausgabe auf die
 Konsole erfolgen. Der Ticketpreis soll die `#gesamtEingenommen` des Automaten
 entsprechend erhöhen.
 
-#### Beispiel für ein Ticket:
+### Beispiel für ein Ticket
 
 ```text
 ===============================
@@ -90,21 +92,66 @@ Restgeld: € 10,-
 ===============================
 ```
 
-## Bonusufgabe html Benutzeroberfläche:
+## Aufgabe 2: html Benutzeroberfläche
+
+Die soeben erstellte Klasse dient als "State" für die zu erstellende Applikation.
 
 Elemente der Benutzeroberfläche:
 
--   einwerfen (input type=numer ... submit)
--   ziel einstellen (option / select)
--   anzahl Personen einstellen
--   Anzeige Fahrpreis (ändert sich bei Ziel Änderung oder Anzahl Änderung)
--   Anzeige des Guthabens (ändert sich durch einwerfen
+- einwerfen (input type=numer ... submit)
+- ziel einstellen (option / select)
+- anzahl Personen einstellen
+- Anzeige Fahrpreis (ändert sich bei Ziel Änderung oder Anzahl Änderung)
+- Anzeige des Guthabens (ändert sich durch einwerfen
     `#guthabenAktuellerKunde`)
--   Ausgabefeld des Tickets, dort kann auch angezeigt werden "Es fehlen noch XX
+- Ausgabefeld des Tickets, dort kann auch angezeigt werden "Es fehlen noch XX
     € damit ich das Ticket drucken kann".
--   Anzeige der gesamten Einnahmen des Automatens, ändert sich bei jedem
+- Anzeige der gesamten Einnahmen des Automatens, ändert sich bei jedem
     Ticketkauf (`#gesamtEingenommen`)
--   button "Ticket Kaufen" (wenn das Geld reicht wird Ticket gedruckt und die
+- button "Ticket Kaufen" (wenn das Geld reicht wird Ticket gedruckt und die
     `#gesamtEingenommen` vergrößern sich entsprechend)
 
-## gutes Gelingen!
+## *gutes Gelingen!*
+
+![tickets](ticketautomat.png)
+
+## Rene Wenz' magisches 8 - Punkte - Programm
+
+1.APPLICATION STATE
+
+- Holds the state of the application
+- This is the single source of truth for the application state
+
+2.STATE ACCESSORS/MUTATORS FN'S
+
+- Functions that allow us to get and set the state
+- Here we will create functions to interact with the state
+
+3.DOM Node Refs
+
+- Static references to DOM nodes needed after the start of the application
+
+4.DOM Node Creation Fn's
+
+- Dynamic creation of DOM nodes needed upon user interaction
+- Here we will possibly create a function that will create a new item
+
+5.RENDER FN
+
+- These functions will render the application state to the DOM
+- IMPORTANT TAKEAWAY: The state drives the UI, any state change should trigger a re-render of the UI
+
+6.EVENT HANDLERS
+
+- These functions handle user interaction e.g. button clicks, key presses etc.
+- These functions will call the state mutators and then call the render function
+- The naming convention for the event handlers is `on<Event>`
+- Here we will create a functions that will handle e.g. a "click" event on a button.
+
+7.INIT BINDINGS
+
+- These are the initial bindings of the event handlers, i.e. register the handlers of Pt. 6 with the DOM Node Refs of Pt. 3
+
+8.INITIAL RENDER
+
+- Here will call the render function (Pt. 5) to render the initial state of the application
