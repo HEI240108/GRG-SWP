@@ -28,17 +28,16 @@ clean:
 check:
 	./check.sh
 
-run: devdeps
-	npm run lsg
+lsg: devdeps
+	node --preserve-symlinks test-obfuscated.js lsg
 
-dev: devdeps
-	npm run devlsg  # TODO move from package.json hereher
+devsg: devdeps
+	node --preserve-symlinks --inspect test.js lsg"
 
 devplf: devdeps
-	npm run devplf # TODO move from package.json hereher
+	node --preserve-symlinks --inspect test.js
 
 plf: devdeps
-	npm start # TODO move from package.json hereher
-
+	npm start
 
 
