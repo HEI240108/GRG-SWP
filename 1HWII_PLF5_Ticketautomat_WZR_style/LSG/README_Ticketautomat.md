@@ -9,15 +9,15 @@ folgende Eigenschaften:
 
 Es gibt 2 Geldfächer:
 
-1. #gesamtEingenommen .. Dies ist der Speicher für alles eingenommene Geld, welches regelmäßig von Bahn-Mitarbeitern entnommen wird.
-2. #guthabenAktuellerKunde .. dies ist der "credit" des aktuellen Kunden
+1. #guthabenAktuellerKunde .. dies ist der "credit" des aktuellen Kunden
+2. #gesamtEingenommen .. Dies ist der Speicher für alles eingenommene Geld, welches regelmäßig von Bahn-Mitarbeitern entnommen wird.
 
 - Im constructor gibt übergibt man, wieviel Geld (#gesamtEingenommen)
-    ürsprünglich drinnen ist (in €).
-- Man kann Geld `einwerfen()`, dies erhöht das Feld `#guthabenAktuellerKunde`
-- Man kann das Fahrziel einstellen, in einem `select` Feld.
+    ürsprünglich drinnen ist (in €), damit der Automat Restgeld geben kann.
+- Man kann Geld `einwerfen()`, dies erhöht das Feld `#guthabenAktuellerKunde` um den eingeworfenen Betrag.
+- Man kann das Fahrziel einstellen, in einem `select` Feld (Zeile s.u.)
 - Man kann die Anzahl der Fahrgäste einstellen (1-10)
-- man kann den Button `ticketKaufen()` drücken, dann wird ein Ticket oder eine Fehlermeldung gedruckt.
+- man kann den Button `ticketKaufen()` drücken, dann wird ein Ticket oder eine Fehlermeldung in die `id` TicketAusgabe gedruckt.
 
 Fahrziele und Preise:
 
@@ -73,8 +73,8 @@ Variable `ziel` speichern können.
 `let ticket = new Ticket (ziel, anzahlPersonen, gegeben)`, soferne der
 eingeworfene Betrag ausreicht. Im Fehlerfall soll eine Exception
 geworfen werden. Mit `console.log(ticket.toString())` soll die Ausgabe auf die
-Konsole erfolgen. Der Ticketpreis soll die `#gesamtEingenommen` des Automaten
-entsprechend erhöhen.
+Konsole erfolgen. Im erfolgreichen Fall wird das Feld `#gesamtEingenommen` des Automaten
+um den Ticketpreis erhöht.
 
 ### Beispiel für ein Ticket
 
@@ -94,9 +94,11 @@ Restgeld: € 10,-
 
 ## Aufgabe 2: html Benutzeroberfläche
 
-Die soeben erstellte Klasse dient als "State" für die zu erstellende Applikation.
+Eine Instanz der oben erstellten Klasse dient als "State" für die zu erstellende Applikation.
+Die von Ihnen implementierten Methoden der Klasse dienen als State-Accessors bzw. State-Modificators,
+somit übernimmt die Klasse die Punkte 1. sowie 2.
 
-Elemente der Benutzeroberfläche:
+Elemente der Benutzeroberfläche (siehe auch Beispiel-Grafik unten):
 
 - einwerfen (input type=numer ... submit)
 - ziel einstellen (option / select)
