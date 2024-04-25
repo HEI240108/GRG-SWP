@@ -4,13 +4,13 @@
 
 ## Ticketautomat
 
-In dieser Übung soll ein Ticketautomat entstehen, als Klasse (class). Er hat
+In dieser Übung soll ein Ticketautomat entstehen, als Klasse. Er hat
 folgende Eigenschaften:
 
 Es gibt 2 Geldfächer:
 
 1. #guthabenAktuellerKunde .. dies ist der "credit" des aktuellen Kunden
-2. #gesamtEingenommen .. Dies ist der Speicher für alles eingenommene Geld, welches regelmäßig von Bahn-Mitarbeitern entnommen wird.
+2. #gesamtEingenommen .. Dies ist der Speicher für alles eingenommene Geld.
 
 - Im constructor gibt übergibt man, wieviel Geld (#gesamtEingenommen)
     ürsprünglich drinnen ist (in €), damit der Automat Restgeld geben kann.
