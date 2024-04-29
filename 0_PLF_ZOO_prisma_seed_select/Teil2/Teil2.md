@@ -1,4 +1,4 @@
-# 4AHWII PLF4 am 20.3.2024
+# 3AHWII PLF am 30.4.2024
 
 ## Thema Datenmodellierung, Seeding und Queries
 
@@ -36,7 +36,7 @@ Grundsätzlich hat jedes Model eine id, und die ist vom Typ "String", und die id
 
 Erstelle dieses Datenmodell mithilfe von Prisma. Beachte die besprochene Groß-
 und Kleinschreibung Deiner Objekte, auch wenn die Angabe Fehler enthält (!).
-
+#####
 ### Seeden der Datenbank
 
 Erstelle mithilfe des `seed` Kommandos folgende Objekte:
