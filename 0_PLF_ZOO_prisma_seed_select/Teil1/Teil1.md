@@ -1,3 +1,5 @@
+const { faker} = require('@faker-js/faker')
+
 # PLF Zoo
 
 ## Angabe Teil 1

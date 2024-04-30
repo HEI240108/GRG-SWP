@@ -1,3 +1,4 @@
+
 class TicketAutomat {
     #einnahmenGesamt;
     #eingeworfen;
@@ -94,8 +95,48 @@ Restgeld: € ${this.#gegeben - this.#summe},-
 ===============================`;
     }
 }
+
+// State
+// 1.APPLICATION STATE;
+// 2.STATE ACCESSORS / MUTATORS FN'S
+const state = new TicketAutomat(100);
+// 3.DOM Node Refs
+const einwerfenInput = document.getElementById('einwerfenBetrag');
+const einwerfenButton = document.getElementById('einwerfenButton');
+const zielSelect = document.getElementById('ziel');
+const anzahlPersonenInput = document.getElementById('anzahlPersonen');
+const fahrpreisSpan = document.getElementById('fahrpreis');
+const guthabenSpan = document.getElementById('guthaben');
+const ticketAusgabeTextarea = document.getElementById('ticketAusgabe');
+const einnahmenSpan = document.getElementById('einnahmen');
+// Static references to DOM nodes needed after the start of the application;
+// 4.DOM Node Creation Fn's
+// no need for this
+// Dynamic creation of DOM nodes needed upon user interaction
+// Here we will possibly create a function that will create a new item;
+// README_Ticketautomat.md(4 / 4);
+// 5.RENDER FN
+function render() {
+    automat.zielEinstellen(zielSelect.value);
+    automat.anzahlEinstellen(anzahlPersonenInput.value);
+    fahrpreisSpan.textContent = automat.gesamtPreis;
+    einnahmenSpan.textContent = automat.einnahmenGesamt;
+}
+// These functions will render the application state to the DOM
+// IMPORTANT TAKEAWAY: The state drives the UI, any state change should trigger a re - render of the UI;
+
+// 6.EVENT HANDLERS
+// These functions handle user interaction e.g.button clicks, key presses etc.
+// These functions will call the state mutators and then call the render function
+//     The naming convention for the event handlers is on < Event >
+//         Here we will create a functions that will handle e.g.a "click" event on a button.
+// 7.INIT BINDINGS
+// These are the initial bindings of the event handlers, i.e.register the handlers of Pt. 6 with the DOM Node Refs of;
+// Pt. 3;
+// 8.INITIAL RENDER
+// Here will call the render function (Pt. 5) to render the initial state of the application;
 function reset() {
-    updateUI();
+    render();
     // ticketAusgabeTextarea.textContent = '';
     // einwerfenInput.textContent = "";
     // anzahlPersonenInput.textContent = "";
@@ -113,12 +154,11 @@ function ticketKaufenClickHandler() {
     // Guthaben im HTML aktualisieren
     guthabenSpan.textContent = automat.eingeworfen;
 
-    updateUI();
+    render();
 }
 automat = new TicketAutomat(150);
 automat.anzahlEinstellen(2);
 automat.zielEinstellen('Graz');
-const einwerfenInput = document.getElementById('einwerfenBetrag');
 einwerfenInput.addEventListener('keyup', (e) => {
     if (e.key != 'Enter') {
         return;
@@ -130,7 +170,6 @@ einwerfenInput.addEventListener('keyup', (e) => {
         ticketAusgabeTextarea.textContent = error.message;
     }
 });
-const einwerfenButton = document.getElementById('einwerfenButton');
 einwerfenButton.addEventListener('click', () => {
     try {
         automat.einwerfen(parseFloat(einwerfenInput.value));
@@ -139,18 +178,6 @@ einwerfenButton.addEventListener('click', () => {
         ticketAusgabeTextarea.textContent = error.message;
     }
 });
-const zielSelect = document.getElementById('ziel');
-const anzahlPersonenInput = document.getElementById('anzahlPersonen');
-const fahrpreisSpan = document.getElementById('fahrpreis');
-const guthabenSpan = document.getElementById('guthaben');
-const ticketAusgabeTextarea = document.getElementById('ticketAusgabe');
-const einnahmenSpan = document.getElementById('einnahmen');
-function updateUI() {
-    automat.zielEinstellen(zielSelect.value);
-    automat.anzahlEinstellen(anzahlPersonenInput.value);
-    fahrpreisSpan.textContent = automat.gesamtPreis;
-    einnahmenSpan.textContent = automat.einnahmenGesamt;
-}
-zielSelect.addEventListener('change', updateUI);
-anzahlPersonenInput.addEventListener('input', updateUI);
-updateUI();
+zielSelect.addEventListener('change', render);
+anzahlPersonenInput.addEventListener('input', render);
+render();
