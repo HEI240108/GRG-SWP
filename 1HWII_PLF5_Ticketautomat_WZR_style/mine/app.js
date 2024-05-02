@@ -11,10 +11,17 @@ class TicketAutomat {
         this.#ziel = undefined;
     }
     einwerfen(geld) {
-        if (isNaN(geld) || geld < 0) {
-            throw new Error('Dieses Geld nehme ich nicht!');
+        let betrag = -1;
+        try {
+            betrag = JSON.parse(geld);
+        } catch (err) {
+            throw new Error("Verschlucke mich gerade!");
         }
-        this.#eingeworfen += geld;
+        if (betrag < 0) {
+            throw new Error('Ich geb nix her!');
+        }
+        this.#eingeworfen += betrag;
+        this.calcFehlend();
     }
     zielEinstellen(ziel) {
         const preis = zieleUndPreise[ziel];
@@ -22,6 +29,13 @@ class TicketAutomat {
             throw new Error('Dorthin fahre ich nicht');
         }
         this.#ziel = ziel;
+        this.calcFehlend();
+    }
+    calcFehlend() {
+        const fehlend = this.gesamtPreis - this.eingeworfen;
+        this.ausgabe = fehlend <= 0 ?
+            'Ticket kann gekauft werden' :
+            `Es fehlen noch € ${fehlend}`;
     }
     set einnahmenGesamt(was) {
         this.#einnahmenGesamt = was;
@@ -46,9 +60,13 @@ class TicketAutomat {
     }
     anzahlEinstellen(wieviele) {
         if (wieviele < 1 || wieviele > 10) {
-            throw new Error('falsche Anzahl Personnen');
+            throw new Error('falsche Anzahl Personen');
         }
         this.#anzahlPersonen = wieviele;
+        this.calcFehlend();
+    }
+    get anzahl() {
+        return this.#anzahlPersonen;
     }
     ticketKaufen() {
         // wirft evtl. einen Fehler
@@ -118,6 +136,8 @@ const fahrpreisSpan = document.getElementById('fahrpreis');
 const guthabenSpan = document.getElementById('guthaben');
 const ticketAusgabeTextarea = document.getElementById('ticketAusgabe');
 const einnahmenSpan = document.getElementById('einnahmen');
+const ticketKaufen = document.getElementById('ticketKaufen');
+const resetBtn = document.getElementById("reset");
 // Static references to DOM nodes needed after the start of the application;
 // 4.DOM Node Creation Fn's
 // no need for this
@@ -126,10 +146,8 @@ const einnahmenSpan = document.getElementById('einnahmen');
 
 // 5.RENDER FN
 function render() {
-    // Ausgabe aktualisieren
+    anzahlPersonenInput.value = automat.anzahl;
     ticketAusgabeTextarea.textContent = automat.ausgabe;
-    // Ziele aktualisieren
-
     guthabenSpan.textContent = automat.eingeworfen;
     fahrpreisSpan.textContent = automat.gesamtPreis;
     einnahmenSpan.textContent = automat.einnahmenGesamt;
@@ -144,10 +162,10 @@ function render() {
 //     The naming convention for the event handlers is on < Event >
 //         Here we will create a functions that will handle e.g.a "click" event on a button.
 function onEinwurf() {
-    const geld = Number(einwerfenInput.value);
-    einwerfenInput.value = '';
+    const geld = einwerfenInput.value;
     try {
         automat.einwerfen(geld);
+        einwerfenInput.value = '';
     } catch (err) {
         automat.ausgabe = err.message;
     } finally {
@@ -163,11 +181,25 @@ function onZielSelect() {
 function onTicketKaufen() {
     try {
         automat.ticketKaufen();
+    } catch (e) {
+        automat.ausgabe = e.message;
     } finally {
         render();
     }
 }
-
+function onAnzahlChange() {
+    try {
+        automat.anzahlEinstellen(anzahlPersonenInput.value);
+    } catch (e) {
+        automat.ausgabe = e.message;
+    } finally {
+        render();
+    }
+}
+function onReset() {
+    automat.anzahlEinstellen(1);
+    render();
+}
 // 7.INIT BINDINGS
 // These are the initial bindings of the event handlers, i.e.register the handlers of Pt. 6 with the DOM Node Refs of;
 // Pt. 3;
@@ -182,15 +214,21 @@ einwerfenButton.addEventListener('click', () => {
     onEinwurf();
 });
 zielSelect.addEventListener('change', onZielSelect);
+// anzahlPersonenInput.addEventListener('change', onAnzahlChange);
+anzahlPersonenInput.addEventListener('keyup', (e) => {
+    if (e.key != 'Enter') {
+        return;
+    }
+    onAnzahlChange();
+});
+ticketKaufen.addEventListener('click', onTicketKaufen);
+resetBtn.addEventListener('click', onReset);
 
 // 8.INITIAL RENDER
 // Here will call the render function (Pt. 5) to render the initial state of the application;
 zielSelect.innerHTML = Object.keys(zieleUndPreise)
     .map(e => `<option value="${e}">${e}</option>`)
     .join('\n');
+automat.zielEinstellen(zielSelect.value);
+automat.anzahlEinstellen(anzahlPersonenInput.value);
 render();
-
-// Guthaben im HTML aktualisieren
-
-zielSelect.addEventListener('change', render);
-anzahlPersonenInput.addEventListener('input', render);
