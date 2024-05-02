@@ -36,6 +36,7 @@ class TicketAutomat {
 - #ziel
 - #anzahlPersonen
 - #standort
+- #ausgabe (get/set)
 + constructor(einnahmenInitial)
 + get gesamtEingenommen()
 + set gesamtEingenommen()

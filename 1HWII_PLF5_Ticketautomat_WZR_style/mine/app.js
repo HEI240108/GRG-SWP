@@ -65,13 +65,7 @@ class TicketAutomat {
         return ticket;
     }
 }
-const zieleUndPreise = {
-    Salzburg: 30,
-    Innsbruck: 45,
-    Klagenfurt: 40,
-    Graz: 25,
-    Bregenz: 60,
-};
+
 class Ticket {
     #anzahlPersonen;
     #ziel;
@@ -108,6 +102,13 @@ Restgeld: € ${this.#gegeben - this.#summe},-
 // 1.APPLICATION STATE;
 // 2.STATE ACCESSORS / MUTATORS FN'S
 const state = new TicketAutomat(100);
+const zieleUndPreise = {
+    Salzburg: 30,
+    Innsbruck: 45,
+    Klagenfurt: 40,
+    Graz: 25,
+    Bregenz: 60,
+};
 // 3.DOM Node Refs
 const einwerfenInput = document.getElementById('einwerfenBetrag');
 const einwerfenButton = document.getElementById('einwerfenButton');
@@ -128,9 +129,11 @@ function render() {
     // Ausgabe aktualisieren
     ticketAusgabeTextarea.textContent = automat.ausgabe;
     // Ziele aktualisieren
-    zielSelect.innerHTML = Object.keys(zieleUndPreise).map(e => `<option value="${e}">${e}</option>`).join('\n');
+
+    guthabenSpan.textContent = automat.eingeworfen;
     fahrpreisSpan.textContent = automat.gesamtPreis;
     einnahmenSpan.textContent = automat.einnahmenGesamt;
+    fahrpreisSpan.textContent = automat.gesamtPreis;
 }
 // These functions will render the application state to the DOM
 // IMPORTANT TAKEAWAY: The state drives the UI, any state change should trigger a re - render of the UI;
@@ -145,15 +148,26 @@ function onEinwurf() {
     einwerfenInput.value = '';
     try {
         automat.einwerfen(geld);
-    } catch (error) {
-        ticketAusgabeTextarea.textContent = error.message;
+    } catch (err) {
+        automat.ausgabe = err.message;
+    } finally {
+        render();
     }
 
 
 }
 function onZielSelect() {
-    console.log("Ziel selected");
+    automat.zielEinstellen(zielSelect.value);
+    render();
 }
+function onTicketKaufen() {
+    try {
+        automat.ticketKaufen();
+    } finally {
+        render();
+    }
+}
+
 // 7.INIT BINDINGS
 // These are the initial bindings of the event handlers, i.e.register the handlers of Pt. 6 with the DOM Node Refs of;
 // Pt. 3;
@@ -171,22 +185,12 @@ zielSelect.addEventListener('change', onZielSelect);
 
 // 8.INITIAL RENDER
 // Here will call the render function (Pt. 5) to render the initial state of the application;
+zielSelect.innerHTML = Object.keys(zieleUndPreise)
+    .map(e => `<option value="${e}">${e}</option>`)
+    .join('\n');
 render();
-function ticketKaufenClickHandler() {
-    console.log('ticketKaufenClickHandler');
-    try {
-        const ticket = automat.ticketKaufen();
-        ticketAusgabeTextarea.textContent = ticket.toString();
-    } catch (error) {
-        console.error(error.message);
-        ticketAusgabeTextarea.textContent = `Fehler: ${error.message}`;
-    }
 
-    // Guthaben im HTML aktualisieren
-    guthabenSpan.textContent = automat.eingeworfen;
-
-    render();
-}
+// Guthaben im HTML aktualisieren
 
 zielSelect.addEventListener('change', render);
 anzahlPersonenInput.addEventListener('input', render);
