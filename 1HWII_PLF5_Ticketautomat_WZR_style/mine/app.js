@@ -1,11 +1,12 @@
-
 class TicketAutomat {
     #einnahmenGesamt;
     #eingeworfen;
     #anzahlPersonen;
     #ziel;
+    #ausgabe;
     constructor(initialGeld) {
         this.einnahmenGesamt = initialGeld;
+        this.ausgabe = "Willkommen";
         this.#eingeworfen = 0;
         this.#ziel = undefined;
     }
@@ -37,6 +38,12 @@ class TicketAutomat {
     get gesamtPreis() {
         return zieleUndPreise[this.#ziel] * this.#anzahlPersonen;
     }
+    get ausgabe() {
+        return this.#ausgabe;
+    }
+    set ausgabe(text) {
+        this.#ausgabe = text;
+    }
     anzahlEinstellen(wieviele) {
         if (wieviele < 1 || wieviele > 10) {
             throw new Error('falsche Anzahl Personnen');
@@ -54,6 +61,7 @@ class TicketAutomat {
         this.#eingeworfen = 0;
 
         this.#einnahmenGesamt += ticket.summe;
+        this.ausgabe = ticket.toString();
         return ticket;
     }
 }
@@ -114,11 +122,13 @@ const einnahmenSpan = document.getElementById('einnahmen');
 // no need for this
 // Dynamic creation of DOM nodes needed upon user interaction
 // Here we will possibly create a function that will create a new item;
-// README_Ticketautomat.md(4 / 4);
+
 // 5.RENDER FN
 function render() {
-    automat.zielEinstellen(zielSelect.value);
-    automat.anzahlEinstellen(anzahlPersonenInput.value);
+    // Ausgabe aktualisieren
+    ticketAusgabeTextarea.textContent = automat.ausgabe;
+    // Ziele aktualisieren
+    zielSelect.innerHTML = Object.keys(zieleUndPreise).map(e => `<option value="${e}">${e}</option>`).join('\n');
     fahrpreisSpan.textContent = automat.gesamtPreis;
     einnahmenSpan.textContent = automat.einnahmenGesamt;
 }
@@ -130,17 +140,38 @@ function render() {
 // These functions will call the state mutators and then call the render function
 //     The naming convention for the event handlers is on < Event >
 //         Here we will create a functions that will handle e.g.a "click" event on a button.
+function onEinwurf() {
+    const geld = Number(einwerfenInput.value);
+    einwerfenInput.value = '';
+    try {
+        automat.einwerfen(geld);
+    } catch (error) {
+        ticketAusgabeTextarea.textContent = error.message;
+    }
+
+
+}
+function onZielSelect() {
+    console.log("Ziel selected");
+}
 // 7.INIT BINDINGS
 // These are the initial bindings of the event handlers, i.e.register the handlers of Pt. 6 with the DOM Node Refs of;
 // Pt. 3;
+const automat = new TicketAutomat(150);
+einwerfenInput.addEventListener('keyup', (e) => {
+    if (e.key != 'Enter') {
+        return;
+    }
+    onEinwurf();
+});
+einwerfenButton.addEventListener('click', () => {
+    onEinwurf();
+});
+zielSelect.addEventListener('change', onZielSelect);
+
 // 8.INITIAL RENDER
 // Here will call the render function (Pt. 5) to render the initial state of the application;
-function reset() {
-    render();
-    // ticketAusgabeTextarea.textContent = '';
-    // einwerfenInput.textContent = "";
-    // anzahlPersonenInput.textContent = "";
-}
+render();
 function ticketKaufenClickHandler() {
     console.log('ticketKaufenClickHandler');
     try {
@@ -156,28 +187,6 @@ function ticketKaufenClickHandler() {
 
     render();
 }
-automat = new TicketAutomat(150);
-automat.anzahlEinstellen(2);
-automat.zielEinstellen('Graz');
-einwerfenInput.addEventListener('keyup', (e) => {
-    if (e.key != 'Enter') {
-        return;
-    }
-    try {
-        automat.einwerfen(parseFloat(einwerfenInput.value));
-        guthabenSpan.textContent = automat.eingeworfen;
-    } catch (error) {
-        ticketAusgabeTextarea.textContent = error.message;
-    }
-});
-einwerfenButton.addEventListener('click', () => {
-    try {
-        automat.einwerfen(parseFloat(einwerfenInput.value));
-        guthabenSpan.textContent = automat.eingeworfen;
-    } catch (error) {
-        ticketAusgabeTextarea.textContent = error.message;
-    }
-});
+
 zielSelect.addEventListener('change', render);
 anzahlPersonenInput.addEventListener('input', render);
-render();
