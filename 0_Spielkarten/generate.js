@@ -6,5 +6,5 @@ farben.forEach((farbe) => {
         karten.push(`${farbe} ${wert}`);
     });
 });
-karten.sort((_) => Math.random() - 0.5);
+karten.sort(() => Math.random() - 0.5);
 karten.forEach((karte) => console.log(karte));
