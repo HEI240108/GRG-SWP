@@ -1,8 +1,0 @@
-{
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "svn.ignoreMissingSvnWarning": true,
-    "markdown.styles": [
-        "C:\\\\Users\\\\grafg\\\\local\\\\md-pdf.css"
-    ]
-}

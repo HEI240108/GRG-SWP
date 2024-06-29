@@ -10,7 +10,7 @@
 - Hardware-Komponenten sowie deren Funktionen benennen und erklären, eine PC-Konfiguration bewerten und Anschaffungsentscheidungen treffen sowie einfache Fehler der Hardware beheben
 - Daten vor Beschädigung und unberechtigtem Zugriff schützen, sich über gesetzliche Rahmenbedingungen informieren und diese berücksichtigen
 
-### Lehrstoff 1:WSSS / KM 1,2
+### Lehrstoff K1 (WS+SS) / KM 1,2
 
 Hardwarekomponenten, Betriebssysteme, Datensicherheit, Textverarbeitung und Präsentation, Publikation und Präsentation im Web, Tabellen und Diagramme, rechtliche und gesellschaftliche Aspekte im Umfeld der Informationstechnik
 
@@ -20,7 +20,7 @@ Hardwarekomponenten, Betriebssysteme, Datensicherheit, Textverarbeitung und Prä
 - Aufgabenstellungen modellieren und in einem ER-Modell abbilden
 - ein ER-Modell in Relationen auflösen
 
-### Lehrstoff 2:WS
+### Lehrstoff K2/WS
 
 - Datenmodellierung (konzeptioneller Datenbankentwurf, Notation, Entities, Attribute, Beziehungen, Kardinalitäten, Generalisierung, Aggregation)
 - Data Definition Language (physischer Datenbankentwurf, Abfragegeneratoren, SQL)
@@ -31,16 +31,16 @@ Hardwarekomponenten, Betriebssysteme, Datensicherheit, Textverarbeitung und Prä
 - Abfragen in SQL erstellen und durchführen
 - eine einfache Datenbankanwendung erstellen
 
-### Lehrstoff 2:SS
+### Lehrstoff K2/SS
 
 - Entwurf von Formularen und Berichten
 - Abfragesprachen (Projektion, Selektion, Gruppierung, Aggregatfunktionen, Verbund, Data Manipulation Language, Data Control Language)
 
-## 3. Klase, 1. Semester (KM 5) Datenbanken
+## 3. Klasse, 1. Semester (KM 5) Datenbanken
 
 - komplexe Abfragen in SQL erstellen und durchführen
 
-### Lehrstoff 3:WS
+### Lehrstoff K3/WS
 
 - Abfragesprachen (Unterabfragen, Datendefinitionssprache, Abfrageoptimierung, Benutzerverwaltung, Datenimport/-export, Archivierung
 
@@ -49,7 +49,7 @@ Hardwarekomponenten, Betriebssysteme, Datensicherheit, Textverarbeitung und Prä
 - die Vorgehensweise zur Erstellung einer Datenbankanwendung für einen bestimmten Einsatzzweck erläutern
 - die für eine Datenbankanwendung notwendigen Anwendungsfälle, Eingabemasken und Ausgabeformate identifizieren
 
-### Lehrstoff 3:SS
+### Lehrstoff K3/SS
 
 - praktische Datenbankanwendungen (Entwicklung von DB-Programmen, Benutzerführung, Reportgenerierung, genormte DB-Schnittstellen)
 - Anwendungsfälle (Applikationsentwurf)
@@ -59,7 +59,7 @@ Hardwarekomponenten, Betriebssysteme, Datensicherheit, Textverarbeitung und Prä
 - den Aufbau und die Einsatzgebiete gängiger ERP-Systeme in Unternehmen erläutern
 - einfache Geschäftsfälle im ERP-System verbuchen und entsprechende Reports erstellen
 
-### Lehrstoff 4:WS
+### Lehrstoff K4/WS
 
 - Finanzbuchhaltung (Konten, Kontenplan, Buchungen, Kreditoren- und Debitorenbuchhaltung, Bilanz und GuV-Rechnung, Auswertungen und Analysen)
 - ERP-Systeme (Systeme und Anbieter, Module, Organisationseinheiten, Benutzeroberfläche, Reports)
@@ -68,7 +68,7 @@ Hardwarekomponenten, Betriebssysteme, Datensicherheit, Textverarbeitung und Prä
 
 - Stammdaten in einem ERP-System anlegen und die entsprechenden Beschaffungs-, Produktions- und Vertriebsprozesse abbilden
 
-### Lehrstoff 4:SS
+### Lehrstoff K4/SS
 
 - Materialwirtschaft (Beschaffungsprozess, Materialstammdaten, Lieferantenstammdaten, Bedarfsermittlung, Bestellung, Wareneingang, Rechnungsprüfung, Zahlungsausgang)
 - Produktionsplanung und -steuerung (Produktionsprozess, Bedarfsplanung, Bedarfsermittlung, Dispositionsarten, Erzeugnisgliederung, Stücklisten, Arbeitsplatzstammdaten, Arbeitsplan, Terminierung, Strategien zur Durchlaufzeitreduzierung, Vorkalkulation, Planauftrag, Fertigungsauftrag, Betriebsdatenerfassung, Rückmeldungen, Nachkalkulation, Auswertungen und Analysen)
@@ -82,7 +82,7 @@ Hardwarekomponenten, Betriebssysteme, Datensicherheit, Textverarbeitung und Prä
 - Informationssysteme zur Entscheidungsunterstützung beschreiben und wissen über ihre Einsatzbereiche Bescheid
 - Betriebsdaten erfassen und auswerten
 
-### Lehrstoff 5:WS
+### Lehrstoff K5/WS
 
 - D: Praktische Datenbankanwendungen, Web- und GUI-Applikationen
 - ERP: Vertrieb (Vertriebsprozess, Kundenstammdaten, Preise und Konditionen, Kundenanfrage, Angebotsbearbeitung, Kundenauftrag, Kommissionierung und Auslieferung, Faktura, Zahlungseingang)
@@ -97,7 +97,7 @@ Hardwarekomponenten, Betriebssysteme, Datensicherheit, Textverarbeitung und Prä
 - ERP: auf Basis einer im ERP-System durchgeführten Auftragssimulation Maßnahmen zur Reduzierung der ermittelten Durchlaufzeit bzw. der kalkulierten Produktkosten treffen
 - INF: Praktische Datenbankanwendungen, Web- und GUI-Applikationen
 
-### Lehrstoff 5:SS
+### Lehrstoff K5/SS
 
 - ERP: Kostenrechnung und Controlling (Kostenarten, Kostenstellen, innerbetriebliche Leistungsverrechnung, Personal- und Maschinenstundensätze, Produktkostenkalkulation, Auswertungen und Analysen)
 - INF: aus einer Prozessbeschreibung Geschäftsprozessmodelle erstellen und simulieren

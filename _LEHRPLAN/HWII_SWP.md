@@ -1,8 +1,6 @@
-# LEHRPLAN SOFTWAREENTWICKLUNG UND PROJEKTMANAGEMENT
+# SWP Wirtschaftsingenieure
 
-## JAHR 1 (1. und 2. Sem)
-
-### Strukturierte Programmierung
+## 1. Klasse Kompetenzen Strukturierte Programmierung
 
 - grundlegende Datentypen und Kontrollstrukturen anwenden
 - einfache algorithmische Problemstellungen analysieren
@@ -10,64 +8,47 @@
 - eine Entwicklungsumgebung einsetzen
 - grundlegende Algorithmen in einer höheren Programmiersprache umsetzen
 
-### Bereich Strukturierte Programmierung
+### Lehrstoff 1. Klasse (WS+SS)
 
 - Programmiersprachenelemente
-
   - Anweisungsfolge
   - Verzweigung
   - Wiederholung
   - Variable
   - Datentypen
-
 - Algorithmus
-
   - Programmierung,
   - Codierung,
   - schrittweise Verfeinerung
-  - Entwurf und
-  - Darstellung von Algorithmen
-
+  - Entwurf und Darstellung von Algorithmen
 - Einstieg in die Programmierung und Systemprogramme
-
   - Einsatz einer visuellen Oberfläche
   - Systemprogramme
   - Interpreter
   - Compiler
   - Fehlerarten
-
 - Datenverarbeitung
-
   - Ein-/Ausgabe
-
 - Modularisierung
-
   - Funktionen und Unterprogramme mit
   - Übergabeparametern und Rückgabewerten
-
 - Zusammengesetzte Datentypen
-
   - Datenfelder
   - Zeichenketten
   - Strukturen
-
 - Standardalgorithmen
-
   - Operationen auf Datenstrukturen
 
-## 3. Semester
-
-### WEB S3
+## 2. Klasse, WS: WEB
 
 - grundlegende Konzepte sowie
 - Auszeichnungs- und Programmiersprachen für die Webentwicklung erläutern
 - statische Webseiten mit einfachem Design erstellen
 - Informationsdarstellung im Internet
-
   - Dokumentenbeschreibungssprachen
   - Datenformate
 
-## 4. Semester
+## 2. Klasse, SS: WEB
 
 - Webanwendungen mit clientseitiger Logik erstellen
 - Webseiten mit komplexem Design erstellen
@@ -78,13 +59,12 @@
   - Animationen
   - Anpassung der Darstellung auf Endgerät
 
-## 5. Semester
+## 3. Klasse, WS: OOP
 
 - die Konzepte der objektorientierten Programmierung mit Vererbung und Polymorphismus anwenden.
 - Problemlösungen in grafischer Notation darstellen und
 - erweiterbare Modelle dazu entwickeln.
 - OOP Elemente und Konzepte
-
   - Klasse
   - Instanz
   - Schnittstelle
@@ -94,7 +74,6 @@
   - grafische Darstellung
   - Vererbung
   - Polymorphismus
-
 - Alternativen zu Arrays
   - Collections
 - Laufzeitanalysen.
@@ -102,181 +81,104 @@
   - Modellierungssprachen
   - Darstellungen
 
-## 6. Semester
-
-### OOP S6a
+## 3, Klasse, SS: SWP
 
 - erweiterbare und wartbare Programme mit grafischer Oberfläche erstellen
 - Laufzeitanalysen durchführen
 - Alternativen zu Arrays beschreiben und je nach Anwendungsbereich eine
     Auswahl treffen
-- Projektmanagement in der Softwareentwicklung anwenden
 - Programmierkonzepte
-
   - Weitere OOP-Konzepte
   - parallele Abläufe
-
 - Grafische Benutzeroberflächen
-
   - Frameworks
   - GUI-Elemente
   - Events
 
-### PRE S6b
+## 3, Klasse, SS: PRE
 
+- Projektmanagement in der Softwareentwicklung anwenden
 - Grundlagen des Projektmanagements
-
   - Definition
   - Projektteam und Rollen
   - Planungselemente
   - Dokumente
-
 - Angewandte Softwareentwicklung und Projektmanagement
-
   - Durchführung eines Softwareprojekts im Team unter Einsatz von Projektmanagementmethoden
 
-## 7. Semester
-
-### OOP S7a
+## 4. Klasse, WS: SWP
 
 - wiederverwendbare Komponenten für Standardaufgaben einsetzen
-- Standardalgorithmen objektorientiert implementieren
-
-### SWP S7a
-
-- aktuelle Vorgehensmodelle und Entwicklungsmethoden beschreiben
-- gängige Entwurfsmuster in der objektorientierten Programmierung beschreiben
-
-### OOP S7b
-
-- Wiederverwendbare Komponenten
-
   - Architektur
   - Einbindung
   - Auswahl
+- Standardalgorithmen objektorientiert implementieren
+- aktuelle Vorgehensmodelle und Entwicklungsmethoden beschreiben
+- gängige Entwurfsmuster in der objektorientierten Programmierung beschreiben
+- Entwurfsmuster (design Pattern)
+  - Anwendungsfälle sowie
+  - Vorteile/Nachteile von gängigen Entwurfsmustern
 
-### SWP S7b
+## 4. Klasse, WS: PRE
 
 - Softwareentwicklungsmodelle
-
   - Einführung und Vergleich von Methoden
   - Schätzverfahren
   - Anforderungsanalyse
 
-- Entwurfsmuster
-
-  - Anwendungsfälle sowie
-  - Vorteile/Nachteile von gängigen Entwurfsmustern
-
-## 8. Semester
-
-### WEB S8a
+## 4. Klasse, SS: SWP
 
 - serverbasierende Internetanwendungen erstellen
-
-### SWP S8a
-
 - Testfälle definieren und damit Programme systematisch testen
 - aktuelle Vorgehensmodelle und Entwicklungsmethoden in der
     Softwareentwicklung anwenden
-
-### WEB S8b
-
 - Erstellung von Serverbasierenden Internetanwendungen
-
   - Client-/Server Konzept
   - serverseitige Programmierung
   - Anbindung von Datenbanken
   - Vergleich unterschiedlicher Technologien
 
-### SWP S8b
+## 4. Klasse, SS: PRE
 
 - Softwarequalitätsmanagement
-
   - Methoden
   - Testverfahren
-
 - Projektmanagement
-
   - Verträge
   - Softskills
-
 - Angewandte Softwareentwicklung und Projektmanagement
-
   - Erstellung eines Softwareprojekts im Team unter Einsatz von
         Projektmanagementmethoden
 
-## 9. Semester
-
-### WEB S9a
+## 5. Klasse, WS: SWP
 
 - Webservices nutzen und eigene erstellen
-
-### OOP S9a
-
-- Entwurfsmuster in der objektorientierten Programmierung auswählen und
-    einsetzen.
-
-### SWP S9a
-
+- Design Pattern in der objektorientierten Programmierung auswählen und einsetzen.
+- Entwurfsmuster (Umsetzung).
 - Anwendungs-, Klassen- und Methodenrefactoring durchführen,
-- Vorgehensmodelle und Entwicklungsmethoden in der Softwareentwicklung
-    anwenden.
-
-### WEB S9b
-
+- Vorgehensmodelle und Entwicklungsmethoden in der Softwareentwicklung anwenden.
 - Webservices
-
   - Sicherheitsaspekte
   - Schnittstellen
   - Informationstypen und Datenformate
   - Frameworks
-
-### OOP S9b
-
-- Entwurfsmuster (Umsetzung).
-
-### SWP S9b
-
-- Angewandte Softwareentwicklung und Projektmanagement
-
-  - Durchführung eines Softwareprojekts im Team unter Einsatz von
-        Projektmanagementmethoden
-
 - Refactoring
-
   - Refactoring in Softwareprojekten
 
-## 10. Semester
+## 5. Klasse, WS: PRE
 
-### WEB S10
+- Durchführung eines Softwareprojekts im Team unter Einsatz von Projektmanagementmethoden
+
+## 5. Klasse, SS: SWP
 
 - komplexe dynamische Webanwendungen erstellen
-
-### OOP S10a
-
 - Wiederverwendbare Komponenten erstellen.
-
-### SWP S10a
-
 - Vorgehensmodelle und Entwicklungsmethoden in der Softwareentwicklung
     anwenden
-
-### WEB
-
 - Webanwendung
-
   - Gesamterstellungsprozess dynamischer Web-Anwendungen
   - Sicherheitsaspekte
   - Frameworks
-
-### OOP S10b
-
 - Arbeiten mit wiederverwendbaren Komponenten
-
-### SWP S10b
-
 - Angewandte Softwareentwicklung und Projektmanagement
-
-  - Durchführung eines Softwareprojekts im Team unter Einsatz von
-        Projektmanagementmethoden
+  - Durchführung eines Softwareprojekts im Team unter Einsatz von Projektmanagementmethoden
