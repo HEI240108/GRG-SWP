@@ -1,0 +1,35 @@
+datasource db {
+    provider = "sqlite"
+    url      = "file:./dev.db"
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Immobilie {
+    id           String    @id @default(cuid())
+    Adresse      String
+    ImmoTyp      String
+    quadratmeter Float
+    baujahr      Float
+    Verkauf      Verkauf[]
+}
+
+model Kunde {
+    id      String    @id @default(cuid())
+    Name    String
+    Kontakt String
+    Verkauf Verkauf[]
+}
+
+model Verkauf {
+    id            String    @id @default(cuid())
+    Immobilie     Immobilie @relation(fields: [immobilieId], references: [id])
+    Kunde         Kunde     @relation(fields: [kundeId], references: [id])
+    Vertrag       String
+    verkaufsdatum DateTime
+    verkaufspreis Float
+    immobilieId   String
+    kundeId       String
+}
