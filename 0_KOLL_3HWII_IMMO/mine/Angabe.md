@@ -14,15 +14,15 @@ Jedes Model (== Tabelle) hat eine id (vom Typ "String"), id-Felder mit `cuid()` 
 
 - Immobilie
 - - id
-- - Adresse: String `faker.location.streetAddress() + faker.location.zipCode() + faker.location.city() + faker.location.country()`
-- - ImmoTyp: String (Büro, Wohnung, Haus, Land, etc..)
+- - adresse: String `faker.location.streetAddress() + faker.location.zipCode() + faker.location.city() + faker.location.country()`
+- - immoTyp: String (Büro, Wohnung, Haus, Land, etc..)
 - - quadratmeter: Number
 - - baujahr
 
 - Kunde
 - - id
-- - Name: String `faker.person.fullName()`
-- - Kontakt: String
+- - name: String `faker.person.fullName()`
+- - tel: String `faker.phone.number()`
 
 - Verkauf
 - - id

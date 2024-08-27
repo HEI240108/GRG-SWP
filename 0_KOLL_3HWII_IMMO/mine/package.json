@@ -13,5 +13,8 @@
     "@faker-js/faker": "^8.4.1",
     "@prisma/client": "^5.18.0",
     "prisma": "^5.18.0"
+  },
+  "prisma": {
+    "seed": "node seed.js"
   }
 }
