@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Person {
+  id             String   @id @default(cuid())
+  birth          DateTime
+  name           String
+  Father         Person?  @relation("father", fields: [fatherId], references: [id])
+  fatherId       String?
+  ChildrenFather Person[] @relation("father")
+  Mother         Person?  @relation("mother", fields: [motherId], references: [id])
+  motherId       String?
+  ChildrenMother Person[] @relation("mother")
+}
