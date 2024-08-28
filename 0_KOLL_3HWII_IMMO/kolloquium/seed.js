@@ -8,6 +8,7 @@ async function seed() {
     const kundeCountTarget = 7;
     const verkaufCountTarget = 3;
     let added = 0;
+    // your code goes here
     return `added ${added} records`;
 }
 seed().then((e) => { console.log(`seeding ok: ${e}`); }).catch((e) => { console.error(`Error: ${e.message}`); }).finally(() => { prisma.$disconnect(); });;

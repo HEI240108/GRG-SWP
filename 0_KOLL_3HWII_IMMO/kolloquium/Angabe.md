@@ -4,12 +4,13 @@
 
 ## Vorbereitung (mit Internet)
 
-1. Prisma Doku aufs das Desktop verschieben und von `Z:\` entfernen, danach am Desktop entpacken.
-2. Den PLF Ordner auf Desktop verschieben
-3. mit Windows-Explorer öffnen und die "Clickme.code-workspace" anklicken. Vscode öffnet sich.
-4. package.json -> open in integrated terminal
-5. npm i (installiert die Dependencies aus dem Internet)
-6. vscode plugins installieren:
+- Alles von `Z:\` auf den Desktop verschieben(!)
+- Komprimierte Files am Desktop entpacken.
+- mit Windows-Explorer öffnen und die "Clickme.code-workspace" anklicken. Vscode öffnet sich.
+- package.json -> open in integrated terminal
+- npm i (installiert die Dependencies aus dem Internet)
+
+vscode plugins installieren:
 
 - prisma
 - sqlite viewer
@@ -20,7 +21,7 @@
 
 ### Datenmodell für eine Immobilienverwaltung
 
-Jedes Model (== Tabelle) hat eine id (vom Typ "String"), id-Felder mit `cuid()` anlegen!
+Jedes Model (== Tabelle) hat eine id (vom Typ "String"), id-Felder mit `uuid()` anlegen!
 
 - Immobilie
 - - id

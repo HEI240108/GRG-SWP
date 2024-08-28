@@ -8,7 +8,7 @@ generator client {
 }
 
 model Immobilie {
-    id           String    @id @default(cuid())
+    id           String    @id @default(uuid(7))
     adresse      String
     immoTyp      String
     quadratmeter Float
@@ -17,14 +17,14 @@ model Immobilie {
 }
 
 model Kunde {
-    id      String    @id @default(cuid())
+    id      String    @id @default(uuid(7))
     name    String
     tel     String
     Verkauf Verkauf[]
 }
 
 model Verkauf {
-    id            String    @id @default(cuid())
+    id            String    @id @default(uuid(7))
     Immobilie     Immobilie @relation(fields: [immobilieId], references: [id])
     Kunde         Kunde     @relation(fields: [kundeId], references: [id])
     vertrag       String
