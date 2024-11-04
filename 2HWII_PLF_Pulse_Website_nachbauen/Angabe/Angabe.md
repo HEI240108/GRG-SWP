@@ -1,5 +1,7 @@
 # PLF HTML / CSS
 
+Classroom: <https://classroom.github.com/classrooms/4498528-sj23-25-2ahwii-swp-infi>
+
 ## November 2024, Prüfer: GRG
 
 ## Nachbau einer Website
@@ -26,9 +28,18 @@ Die zu verwendenden Farben befinden sich bereits in der Datei "styles.css". Denk
 
 In der Navbar soll die derzeit aktive Seite (derzeit: "Pricing") mittels Zuweisung der CSS-Klasse "active" (selbst zu erstellen) auf schwarz gefärbt werden können. "Sign Up" hat deswegen einen Rahmen, weil die Maus gerade drüber ist ("hover").
 
+### Erlaubte Ressourcen
+
+- <www.google.(at|com)>
+- <www.ecosia.org>
+- <getbootstrap.com>
+- <github.com>
+- <developer.mozilla.org>
+- <www.w3.org>
+- <www.w3schools.com>
+
 ### Abgabe
 
-Stelle sicher, daß sich Dein Projekt nach Ende der Arbeit auf dem Laufwerk Z:
-befindet und melde Dich anschließend von dem Rechner ab!
+Abgabe ist ein einfaches "push" ..
 
 ## Gutes Gelingen
