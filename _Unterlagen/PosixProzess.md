@@ -4,6 +4,8 @@ Ein Prozess ist ein laufendes Programm.
 
 ## Process Creation
 
+Der allererste Prozess heißt `init` und wird vom kernel nach Initialisierung der Hardware (-Treiber) gestartet. Er hat traditionellerweise die `PID = 1` und läuft solange das System läuft.
+
 Ein Prozess wird erzeugt, indem der Parent-Prozess zuerst
 
 - `fork()`'ed (siehe man fork). Es gibt jetzt 2 Instanzen, eine ist das Child, die andere der Parent.
