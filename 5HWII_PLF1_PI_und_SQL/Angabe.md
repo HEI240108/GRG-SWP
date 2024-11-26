@@ -6,20 +6,20 @@
 
 ![formel.png](formel.png)
 
-### 1.a: Testmethode
+### 1.a (8P): Testmethode
 
 Mit `deno init` ist ein "nacktes" Projekt zu erstellen, es wird automatisch gleich eine Testmethode mit erstellt.
 Übrigens: `assert.assertAlmostEquals(actual, expected, tolerance, msg)` können zwei Werte in einer Testmethode auf "Fast - Gleichheit" hin überprüft werden.
 
 In `main_test.ts` sollte also überprüft werden, ob der erste retournierte Wert tatsächlich `π / 4` ist.
 
-### 1.b: Leibniz Funktion
+### 1.b (8P): Leibniz Funktion
 
 Gesucht ist hier die Funktion `leibniz(): [number, number]`. Die beiden retournierten Werte sind a) die gefundene Näherung für `π / 4` sowie b) die Anzahl der benötigten Iterationen (also bis sich der Näherungswert nicht mehr ändert).
 
 ## Aufgabe 2: SQL
 
-### 2.1: customers-who-never-order
+### 2.a (8P): customers-who-never-order
 
 ```text
 Table: Customers
@@ -99,7 +99,7 @@ insert into Orders (id, customerId) values ('1', '3')
 insert into Orders (id, customerId) values ('2', '1')
 ```
 
-### 2.2: duplicate-emails
+### 2.b (8P): duplicate-emails
 
 ```text
 Table: Person
@@ -152,7 +152,7 @@ insert into Person (id, email) values ('2', 'c@d.com')
 insert into Person (id, email) values ('3', 'a@b.com')
 ```
 
-### 2.3. Delete Duplicate Emails
+### 2.c (8P): Delete Duplicate Emails
 
 ```text
 Table: Person
@@ -207,3 +207,7 @@ insert into Person (id, email) values ('1', 'john@example.com')
 insert into Person (id, email) values ('2', 'bob@example.com')
 insert into Person (id, email) values ('3', 'john@example.com')
 ```
+
+Erreichbar: 40P. Schlüssel: 0-20/21-25/26-30/31-35/36-40
+
+Gutes Gelingen!
