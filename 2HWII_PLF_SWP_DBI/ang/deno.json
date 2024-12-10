@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "fb": "deno run --watch fizzbuzz.ts",
+    "pers": "deno run --watch persons.ts"
   },
   "imports": {
     "@faker-js/faker": "npm:@faker-js/faker@^9.3.0",
