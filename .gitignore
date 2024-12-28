@@ -1,4 +1,5 @@
 .~lock.*#
+*.db
 plantuml-images
 node_modules
 tmp
