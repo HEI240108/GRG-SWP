@@ -1,33 +1,58 @@
 -- never order:
-select
+SELECT
     *
-from
+FROM
     customers
-where
-    id not in (
-        select
+WHERE
+    id NOT IN (
+        SELECT
             customerid
-        from
+        FROM
             orders
     );
 
 -- delete duplicate emails
-delete from person
-where
+DELETE FROM
+    person
+WHERE
     id = (
-        select
+        SELECT
             max(id)
-        from
+        FROM
             person
-        where
+        WHERE
             email = (
-                select
+                SELECT
                     email
-                from
+                FROM
                     person
-                group by
+                GROUP BY
                     email
-                having
+                HAVING
                     count() > 1
             )
+    );
+
+--- bessser:
+DELETE FROM
+    person
+WHERE
+    id IN (
+        SELECT
+            max(id)
+        FROM
+            person
+        WHERE
+            email IN (
+                SELECT
+                    email
+                FROM
+                    person
+                GROUP BY
+                    email
+                HAVING
+                    count() > 1
+            )
+        GROUP BY
+            email
     );
