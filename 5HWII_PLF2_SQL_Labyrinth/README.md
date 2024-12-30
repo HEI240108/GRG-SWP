@@ -23,13 +23,13 @@ Beispiel 1:
 
 Eingabe: Kino-Tabelle:
 
-| id | film         | beschreibung | bewertung |
-| -- | ------------ | ------------ | --------- |
-| 1  | Krieg        | tolles 3D    | 8.9       |
-| 2  | Wissenschaft | Fiktion      | 8.5       |
-| 3  | irisch       | langweilig   | 6.2       |
-| 4  | Eis Lied     | Fantasie     | 8.6       |
-| 5  | Haus Karte   | Interessant  | 9.1       |
+| id | film           | beschreibung | bewertung |
+| -- | -------------- | ------------ | --------- |
+| 1  | Krieg          | tolles 3D    | 8.9       |
+| 2  | Wissenschaft   | Fiktion      | 8.5       |
+| 3  | irisch         | langweilig   | 6.2       |
+| 4  | Eis Lied       | Fantasie     | 8.6       |
+| 5  | House of Cards | Interessant  | 9.1       |
 
 Ausgabe:
 
