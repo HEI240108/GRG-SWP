@@ -32,9 +32,9 @@ class Matrix {
         }
         return rv;
     }
-    getPossibleMoves(p: [number, number]) {
+    getPossibleMoves(point: [number, number]) {
         const rv = [];
-        const [zp, sp] = p;
+        const [zp, sp] = point;
         const directions = [ // clockwise
             [zp - 1, sp],
             [zp, sp + 1],
@@ -51,8 +51,8 @@ class Matrix {
         }
         return rv;
     }
-    isFree(p: [number, number]): boolean {
-        const [z, s] = p;
+    isFree(point: [number, number]): boolean {
+        const [z, s] = point;
         return this.array[z][s] == 1; // TODO
     }
     solve(start: [number, number], goal: [number, number]): void {
@@ -75,19 +75,19 @@ class Matrix {
         }
         this.mark(start, 1);
     }
-    mark(p: [number, number], code: number) {
-        const [z, s] = p;
+    mark(point: [number, number], code: number) {
+        const [z, s] = point;
         this.array[z][s] = code;
     }
-    matrixToString(m: number[][]): string {
-        let rv = "  " + m[0].map((_v, i) => `${(i + 1) % 10} `).join("") + "\n";
-        for (let z = 0; z < m.length; z++) {
+    matrixToString(matrix: number[][]): string {
+        let rv = "  " + matrix[0].map((_v, i) => `${(i + 1) % 10} `).join("") + "\n";
+        for (let z = 0; z < matrix.length; z++) {
             rv += `${(z + 1) % 10} `;
-            for (let s = 0; s < m[z].length; s++) {
+            for (let s = 0; s < matrix[z].length; s++) {
                 let c;
-                switch (m[z][s]) {
+                switch (matrix[z][s]) {
                     case 0: {
-                        c = "+ ";
+                        c = "# ";
                         break;
                     }
                     case 1: {
@@ -103,7 +103,7 @@ class Matrix {
                         break;
                     }
                     default: {
-                        c = `${m[z][s]} ?? `;
+                        c = `${matrix[z][s]} ?? `;
                     }
                 }
                 rv += c;

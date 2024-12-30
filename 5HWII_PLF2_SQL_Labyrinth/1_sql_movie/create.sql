@@ -20,7 +20,7 @@ VALUES
 INSERT INTO
     cinema (id, movie, description, rating)
 VALUES
-    (3, 'irish', 'boring', 6.2);
+    (3, 'irish', 'langweilig', 6.2);
 
 INSERT INTO
     cinema (id, movie, description, rating)
