@@ -33,13 +33,13 @@ Eingabe: Kino-Tabelle:
 
 Ausgabe:
 
-| id | film       | beschreibung | bewertung |
-| -- | ---------- | ------------ | --------- |
-| 5  | Haus Karte | Interessant  | 9.1       |
-| 1  | Krieg      | tolles 3D    | 8.9       |
+| id | film           | beschreibung | bewertung |
+| -- | -------------- | ------------ | --------- |
+| 5  | House of Cards | Interessant  | 9.1       |
+| 1  | Krieg          | tolles 3D    | 8.9       |
 
-Erläuterung: Wir haben drei Filme mit ungeraden IDs: 1, 3 und 5. Der Film mit
-der ID = 3 ist langweilig, daher schließen wir ihn nicht in die Antwort ein.
+Erläuterung: Es gibt drei Filme mit ungeraden IDs: 1, 3 und 5. Der Film mit der
+ID = 3 ist langweilig, daher wird er nicht in die Antwort einbezogen.
 
 ## Aufgabe 2: Erweiterung der Labyrinth-Lösung
 
@@ -104,11 +104,9 @@ personId.
 
 Schreibe eine Lösung, um den Vornamen, Nachnamen, die Stadt und das Bundesland
 jeder Person in der Person-Tabelle zu melden. Wenn die Adresse einer personId
-nicht in der Adresse-Tabelle vorhanden ist, melde stattdessen null.
-
-Gib die Ergebnistabelle in beliebiger Reihenfolge zurück.
-
-Das Ergebnisformat ist im folgenden Beispiel dargestellt.
+nicht in der Adresse-Tabelle vorhanden ist, melde stattdessen null. Gib die
+Ergebnistabelle in beliebiger Reihenfolge zurück. Das Ergebnisformat ist im
+folgenden Beispiel dargestellt.
 
 Beispiel 1:
 
@@ -133,6 +131,6 @@ Ausgabe:
 | Allen   | Wang     | Null          | Null     |
 | Bob     | Alice    | New York City | New York |
 
-Erläuterung: Es gibt keine Adresse in der Adresse-Tabelle für die personId = 1,
-daher geben wir null in ihrer Stadt und ihrem Bundesland zurück. addressId = 1
-enthält Informationen über die Adresse der personId = 2.
+Erläuterung: Da es keine Adresse in der Adresse-Tabelle für die personId = 1
+gibt, werden null für Stadt und Bundesland zurückgegeben. addressId = 1 enthält
+Informationen über die Adresse der personId = 2.
