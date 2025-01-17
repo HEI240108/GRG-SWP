@@ -1,16 +1,28 @@
 #!/usr/bin/env -S deno run -A --v8-flags=--stack_size=4096
 const maxSolutions = 10;
+
 class Matrix {
     // 0: wall #
     // 1: free "  "
     // 2: Goal reached
     // ←, →, ↑, ↓
-    solutions: (number | string)[][][] = [];
-    array: (number | string)[][] = [];
+    solutions: string[][][] = [];
+    array: string[][] = [];
     lastPrintdate = new Date().valueOf();
-    constructor(fileName: string) { // TODO implement}
+    constructor(fileName: string) {
         const data = Deno.readTextFileSync(fileName);
-        this.array = JSON.parse(data);
+        this.array = JSON.parse(data).map((row: number[]) =>
+            row.map((v) => {
+                switch (v) {
+                    case 0:
+                        return "#";
+                    case 1:
+                        return " ";
+                    default:
+                        throw new Error(`Unknown character: ${v}`);
+                }
+            })
+        ) as string[][];
     }
     getDoors() {
         const rv = [];
@@ -33,8 +45,8 @@ class Matrix {
         }
         return rv;
     }
-    getPossibleMoves(point: [number, number]) {
-        const rv = [];
+    getPossibleMoves(point: [number, number]): [number, number, string][] {
+        const rv: [number, number, string][] = [];
         const [zp, sp] = point;
         const directions: [number, number, string][] = [ // clockwise , , ,
             [zp - 1, sp, "↑"], // up
@@ -46,7 +58,7 @@ class Matrix {
             const [z, s, dir] = d;
             if (z < 0 || z >= this.array.length) continue;
             if (s < 0 || s >= this.array[z].length) continue;
-            if (this.array[z][s] == 1) {
+            if (this.array[z][s] == " ") {
                 rv.push([z, s, dir]);
             }
         }
@@ -54,13 +66,13 @@ class Matrix {
     }
     isFree(point: [number, number]): boolean {
         const [z, s] = point;
-        return this.array[z][s] == 1; // TODO
+        return this.array[z][s] == " ";
     }
     solve(start: [number, number], goal: [number, number]): void {
         if (start[0] == goal[0] && start[1] == goal[1]) {
             const solution = this.array.map((row) => [...row]);
             const [z, s] = goal;
-            solution[z][s] = 2;
+            solution[z][s] = "o";
             this.solutions.push(solution);
             return;
         }
@@ -71,42 +83,24 @@ class Matrix {
         //}
         const possibleMoves = this.getPossibleMoves(start);
         for (const move of possibleMoves) {
-            const [z, s, dir] = move;
+            const [_z, _s, dir] = move;
             this.mark(start, dir);
-            this.solve(move as [number, number], goal);
+            this.solve([move[0], move[1]], goal);
             if (this.solutions.length >= maxSolutions) return;
         }
-        this.mark(start, 1);
+        this.mark(start, " ");
     }
-    mark(point: [number, number], code: number | string) {
+    mark(point: [number, number], code: string) {
         const [z, s] = point;
         this.array[z][s] = code;
     }
-    matrixToString(matrix: (number | string)[][]): string {
+    matrixToString(matrix: string[][]): string {
         let rv = "  " + matrix[0].map((_v, i) => `${(i + 1) % 10} `).join("") +
             "\n";
         for (let z = 0; z < matrix.length; z++) {
             rv += `${(z + 1) % 10} `;
             for (let s = 0; s < matrix[z].length; s++) {
-                let c;
-                switch (matrix[z][s]) {
-                    case 0: {
-                        c = "# "; // wall
-                        break;
-                    }
-                    case 1: {
-                        c = "  "; // free
-                        break;
-                    }
-                    case 2: {
-                        c = "! "; // goal
-                        break;
-                    }
-                    default: {
-                        c = `${matrix[z][s]} `;
-                    }
-                }
-                rv += c;
+                rv += `${matrix[z][s]} `;
             }
             rv += "\n";
         }
