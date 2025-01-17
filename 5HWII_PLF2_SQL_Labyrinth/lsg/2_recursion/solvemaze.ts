@@ -1,6 +1,14 @@
 #!/usr/bin/env -S deno run -A --v8-flags=--stack_size=4096
 const maxSolutions = 10;
 
+function doLater(what: any, whatArg: any, ms: number) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(what(whatArg));
+        }, ms);
+    });
+}
+
 class Maze {
     // 0: wall #
     // 1: free "  "
@@ -68,7 +76,11 @@ class Maze {
         const [z, s] = point;
         return this.maze[z][s] == " ";
     }
-    solve(start: [number, number], goal: [number, number]): void {
+    async solve(
+        arg: { start: [number, number]; goal: [number, number] },
+    ): Promise<void> {
+        const start = arg.start;
+        const goal = arg.goal;
         if (start[0] == goal[0] && start[1] == goal[1]) {
             const solution = this.maze.map((row) => [...row]);
             const [z, s] = goal;
@@ -85,7 +97,12 @@ class Maze {
         for (const move of possibleMoves) {
             const [_z, _s, dir] = move;
             this.mark(start, dir);
-            this.solve([move[0], move[1]], goal);
+            console.log(this.matrixToString(this.maze));
+            await doLater(
+                this.solve.bind(this),
+                { "start": [move[0], move[1]], goal },
+                250,
+            );
             if (this.solutions.length >= maxSolutions) return;
         }
         this.mark(start, " ");
@@ -132,7 +149,7 @@ if (import.meta.main) {
         Deno.exit(1);
     }
     let start, goal;
-    if (Deno.args.length == 3) {
+    if (Deno.args.length == 3) { // start and goal given
         start = eval(`[${Deno.args[1]}]`); // "1,6" -> [1,6]
         if (start.length != 2) {
             errorExit(
@@ -170,6 +187,6 @@ if (import.meta.main) {
             );
         }
     }
-    matrix.solve(start, goal);
+    await matrix.solve({ start, goal });
     console.log(matrix.toString());
 }
