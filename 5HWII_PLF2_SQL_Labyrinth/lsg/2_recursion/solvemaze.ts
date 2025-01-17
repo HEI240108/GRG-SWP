@@ -1,17 +1,17 @@
 #!/usr/bin/env -S deno run -A --v8-flags=--stack_size=4096
 const maxSolutions = 10;
 
-class Matrix {
+class Maze {
     // 0: wall #
     // 1: free "  "
     // 2: Goal reached
     // ←, →, ↑, ↓
     solutions: string[][][] = [];
-    array: string[][] = [];
+    maze: string[][] = [];
     lastPrintdate = new Date().valueOf();
     constructor(fileName: string) {
         const data = Deno.readTextFileSync(fileName);
-        this.array = JSON.parse(data).map((row: number[]) =>
+        this.maze = JSON.parse(data).map((row: number[]) =>
             row.map((v) => {
                 switch (v) {
                     case 0:
@@ -27,20 +27,20 @@ class Matrix {
     getDoors() {
         const rv = [];
         // search first and last row zeile
-        for (const z of [0, this.array.length - 1]) {
-            for (let s = 0; s < this.array[z].length; s++) {
+        for (const z of [0, this.maze.length - 1]) {
+            for (let s = 0; s < this.maze[z].length; s++) {
                 if (this.isFree([z, s])) {
                     rv.push([z, s]);
                 }
             }
         }
         // search first and last column spalte
-        for (let z = 0; z < this.array.length; z++) {
+        for (let z = 0; z < this.maze.length; z++) {
             if (this.isFree([z, 0])) {
                 rv.push([z, 0]);
             }
-            if (this.isFree([z, this.array[z].length - 1])) {
-                rv.push([z, this.array[z].length - 1]);
+            if (this.isFree([z, this.maze[z].length - 1])) {
+                rv.push([z, this.maze[z].length - 1]);
             }
         }
         return rv;
@@ -56,9 +56,9 @@ class Matrix {
         ];
         for (const d of directions) {
             const [z, s, dir] = d;
-            if (z < 0 || z >= this.array.length) continue;
-            if (s < 0 || s >= this.array[z].length) continue;
-            if (this.array[z][s] == " ") {
+            if (z < 0 || z >= this.maze.length) continue;
+            if (s < 0 || s >= this.maze[z].length) continue;
+            if (this.maze[z][s] == " ") {
                 rv.push([z, s, dir]);
             }
         }
@@ -66,11 +66,11 @@ class Matrix {
     }
     isFree(point: [number, number]): boolean {
         const [z, s] = point;
-        return this.array[z][s] == " ";
+        return this.maze[z][s] == " ";
     }
     solve(start: [number, number], goal: [number, number]): void {
         if (start[0] == goal[0] && start[1] == goal[1]) {
-            const solution = this.array.map((row) => [...row]);
+            const solution = this.maze.map((row) => [...row]);
             const [z, s] = goal;
             solution[z][s] = "o";
             this.solutions.push(solution);
@@ -92,7 +92,7 @@ class Matrix {
     }
     mark(point: [number, number], code: string) {
         const [z, s] = point;
-        this.array[z][s] = code;
+        this.maze[z][s] = code;
     }
     matrixToString(matrix: string[][]): string {
         let rv = "  " + matrix[0].map((_v, i) => `${(i + 1) % 10} `).join("") +
@@ -123,7 +123,7 @@ function errorExit(msg: string) {
 if (import.meta.main) {
     let matrix;
     try {
-        matrix = new Matrix(Deno.args[0]); // "lab1.json"
+        matrix = new Maze(Deno.args[0]); // "lab1.json"
     } catch (e) {
         let msg;
         if (e instanceof Error) msg = e.message;
