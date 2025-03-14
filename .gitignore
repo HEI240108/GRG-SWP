@@ -10,3 +10,5 @@ tmp
 0_diverse_prisma_schemas/Person_Mutter_Vater/prisma/dev.db
 2HWII_PLF_SWP_DBI/lsg/pers.db
 5HWII_PLF2_SQL_Labyrinth/README.pdf
+bin/
+obj/

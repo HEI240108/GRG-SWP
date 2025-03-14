@@ -10,22 +10,19 @@ options.FileProvider = new PhysicalFileProvider(Path.Combine(builder.Environment
 app.UseDefaultFiles(options);
 
 // Serve static files from the "static" directory with a "/static" URL prefix
-app.UseStaticFiles(new StaticFileOptions
-{
+app.UseStaticFiles(new StaticFileOptions {
     FileProvider = new PhysicalFileProvider(
         Path.Combine(builder.Environment.ContentRootPath, "static")),
     RequestPath = "",
-     OnPrepareResponse = ctx =>
-    {
+    OnPrepareResponse = ctx => {
         Console.WriteLine($"Serving static file: {ctx.Context.Request.Path}");
     }
 });
 
 // API endpoint example
-app.MapGet("/student", () => {
+app.MapGet("/student", static () => {
     Console.WriteLine("API endpoint for /student was called");
-    return new
-    {
+    return new {
         Id = 1,
         Name = "John Doe",
         Age = 20,
