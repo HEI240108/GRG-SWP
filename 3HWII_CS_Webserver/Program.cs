@@ -23,7 +23,7 @@ app.UseStaticFiles(new StaticFileOptions
 
 // API endpoint example
 app.MapGet("/student", () => {
-    Console.WriteLine("API endpoint for /student.txt was called");
+    Console.WriteLine("API endpoint for /student was called");
     return new
     {
         Id = 1,
