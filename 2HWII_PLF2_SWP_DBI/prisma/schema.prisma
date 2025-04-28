@@ -15,16 +15,16 @@ datasource db {
 }
 
 model Frage {
-    id        Int      @id @default(autoincrement())
-    frage     String
-    answers   Answer[] @relation("FrageAnswers")
-    correct   Answer   @relation("FrageCorrectAnswer", fields: [correctId], references: [id])
-    correctId Int
+    id            Int      @id @default(autoincrement())
+    frage         String
+    Answers       Answer[] @relation("FrageAnswers")
+    CorrectAnswer Answer   @relation("FrageCorrectAnswer", fields: [correctId], references: [id])
+    correctId     Int
 }
 
 model Answer {
     id         Int     @id @default(autoincrement())
     answer     String
     Fragen     Frage[] @relation("FrageAnswers")
-    correctFor Frage[] @relation("FrageCorrectAnswer")
+    CorrectFor Frage[] @relation("FrageCorrectAnswer")
 }
