@@ -1,8 +1,14 @@
-import { assert, assertEquals, assertThrows } from "@std/assert";
+import {
+    assert,
+    assertEquals,
+    assertFalse,
+    assertNotEquals,
+    assertThrows,
+} from "@std/assert";
 const imp = Deno.env.get("IMPORT");
 
-import * as plf from "./plf.js";
-import * as grg from "./grg.js";
+import * as plf from "../plf.js";
+import * as grg from "../grg.js";
 
 let urxn;
 
@@ -33,6 +39,7 @@ Deno.test("constructor takes 3 arguments", () => {
     assertEquals(frage2.antwort, "OptionB");
 });
 Deno.test("constructor throws on false arguments", () => {
+    assert(urxn.Frage);
     assertThrows(() => {
         new urxn.Frage();
     });
@@ -47,6 +54,7 @@ Deno.test("constructor throws on false arguments", () => {
     });
 });
 Deno.test("constructor throws on not included antwort", () => {
+    assert(urxn.Frage);
     assertThrows(() => {
         new urxn.Frage("Frage", ["Option1", "Option2"], "Option3");
     });
