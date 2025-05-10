@@ -71,13 +71,14 @@ Deno.test("class Quiz exists", () => {
     );
 });
 // 6
-Deno.test("constructor takes exactly argument", () => {
+Deno.test("constructor takes exactly one argument", () => {
     assertThrows(() => {
         new plf.Quiz();
     });
     assertThrows(() => {
         new plf.Quiz("fragen.js", "extra");
     });
+    new plf.Quiz(otdb);
 });
 // 7
 Deno.test("fragen is an array of Frage objects", () => {
