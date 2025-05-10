@@ -37,4 +37,23 @@ export class Quiz {
             );
         }
     }
+    getFragenByLength(minLength) {
+        return this.fragen.filter((frage) => frage.frage.length >= minLength);
+    }
+    getFragenSortedByLength() {
+        return this.fragen.sort((a, b) => a.frage.length - b.frage.length);
+    }
+    getFragenWithOption(option) {
+        return this.fragen.filter((frage) => frage.optionen.includes(option));
+    }
+    getAllOptions() {
+        return [...new Set(this.fragen.flatMap((frage) => frage.optionen))];
+    }
+    getAverageOptions() {
+        const optionCount = this.fragen.reduce(
+            (acc, frage) => acc + frage.optionen.length,
+            0,
+        );
+        return optionCount / this.fragen.length;
+    }
 }

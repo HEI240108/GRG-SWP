@@ -1,6 +1,6 @@
-# 2ahwii plf 2025-04-29
+# 4aaif plf 2025-05-15
 
-## themen: javascript klassen, sql joins
+## themen: javascript klassen und arrays
 
 ### Task 1: Erstellung und export der Klasse "Frage"
 
@@ -36,7 +36,35 @@ exportiere nun eine weitere Klasse: "Quiz"
 
 Werfe nun Fehler, wenn die "arguments" des constructors nicht Länge 1 haben.
 
-### Task 7: Einlesen von einer .json Datei im Quiz constructor
+### Task 7: Quiz constructor
 
-... in das Array "Quiz.fragen". `new Quiz("fragen.json")` sollte nun die Datei
-einlesen. Erinnerung: `Deno.readTextFileSync(fileName)` und `JSON.parse(json)`.
+Der constructor bekommt eine Liste an "POJO's" (plain old javascript objects)
+auz der Datei `fragen.js`.
+Jedes Element der Liste soll als `new Frage(a,b,c)` an quiz.fragen angehängt werden.
+
+### Task 8: getFragenByLength
+
+Es geht um die String-Länge des Attributes ".frage"
+
+### Task 9: Sortiert nach Länge getFragenSortedByLength
+
+Es geht um die Länge des Strings der Frage
+
+### Task 10
+
+Hier wollen wir eine Liste an Fragen erstellen, in welcher die übergebene Option
+vorkommt.
+
+### Task 11 Durchschnittliche Optionen-Anzahl
+
+`getAverageOptions()` soll die durchschnittliche Anzal an Optionen retournieren.
+
+### Task 12 eine Liste mit allen Optionen
+
+.. des gesamten Quiz, ohne Duplikate!!
+
+## Gutes Gelingen
+
+Beurteilung: Für jeden erfolgreichen Test gibt es 2 Punkte:
+
+`0-12 / 13-15 / 16-18 / 19-21 / 22-240-12 / 13-15 / 16-18 / 19-21 / 22-24`

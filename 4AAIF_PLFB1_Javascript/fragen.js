@@ -10,7 +10,7 @@ export const otdb = [
         "antwort": "The Sea",
     },
     {
-        "frage": "Neptune&#039;s greek name was...",
+        "frage": "Neptune's greek name was...",
         "optionen": [
             "Poseidon",
             "Apollo",
@@ -20,7 +20,7 @@ export const otdb = [
         "antwort": "Poseidon",
     },
     {
-        "frage": "What was the punishment for Sysiphus&#039;s craftiness?",
+        "frage": "What was the punishment for Sysiphus's craftiness?",
         "optionen": [
             "Standing in a lake filled with water he could not drink.",
             "To fell a tree that regenerated after every axe swing.",
@@ -105,7 +105,7 @@ export const otdb = [
     },
     {
         "frage":
-            "Which greek god/goddess tossed a golden apple with the words &quot;for the fairest&quot; into the middle of the feast of the gods?",
+            'Which greek god/goddess tossed a golden apple with the words "for the fairest" into the middle of the feast of the gods?',
         "optionen": [
             "Ares",
             "Hades",
@@ -179,7 +179,7 @@ export const otdb = [
     },
     {
         "frage":
-            "Which Greek &amp; Roman god was known as the god of music, truth and prophecy, healing, the sun and light, plague, poetry, and more?",
+            "Which Greek & Roman god was known as the god of music, truth and prophecy, healing, the sun and light, plague, poetry, and more?",
         "optionen": [
             "Athena",
             "Artemis",
