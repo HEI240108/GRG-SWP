@@ -25,28 +25,9 @@ export class Frage {
     }
 }
 export class Quiz {
-    constructor(fileName) {
+    constructor(liste) {
         this.fragen = [];
-
-        assertEquals(
-            typeof fileName,
-            "string",
-            "Dateiname muss ein String sein",
-        );
-        assertEquals(
-            fileName.endsWith(".json"),
-            true,
-            "Dateiname muss .json enden",
-        );
-        assertEquals(1, arguments.length, "Es wird 1 Argument erwartet");
-        const json = Deno.readTextFileSync(fileName);
-        const data = JSON.parse(json);
-        assertEquals(
-            Array.isArray(data),
-            true,
-            "Datei muss ein Array sein",
-        );
-        for (const frage of data) {
+        for (const frage of liste) {
             this.fragen.push(
                 new Frage(
                     frage.frage,
