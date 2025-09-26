@@ -1,5 +1,0 @@
-###
-POST https://grafg1.spengergasse.at/verify
-Content-Type: application/json
-
-{"user": "grafg", "passwd": "1234"}
