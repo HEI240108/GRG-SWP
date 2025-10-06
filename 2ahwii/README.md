@@ -1,5 +1,18 @@
 # sj25-26-2ahwii-swp-grg-mja
 
+## 2025-10-06 Tests
+
+HÜ: Tests weiter automatisieren:
+
+Zufalls-Int mit Math.ceil(Math.random()*oberschranke) erzeugen
+
+- Ergebnis zuerst generieren (jeweils zuf. ganz / zähler / nenner)
+- den Zähler in 2 Teile durch Subtraktion zerlegen, sodass a+b wieder == Zähler wird
+- Beide Brüche um eine jeweils andere Zufallszahl (int) erweitern
+- überprüfen, ob bruch1.addiere(bruch2).toString() gleich ist wie ergebnis.toString()
+
+obige Punkte in einer Schleife etwa 15x ausführen!!
+
 ## 2025-09-29
 
 OO vertieft anhand Class Bruch
