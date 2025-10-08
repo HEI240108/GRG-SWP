@@ -1,5 +1,26 @@
 # sj25-26-5ahwii-swp
 
+## 2025-10-08
+
+nochmal prisma recap
+
+HÜ: Fussball Manager
+
+Entities:
+
+- Player
+- - spielt in EINER Mannschaft
+- Mannschaft
+- - viele Player
+- Match
+- - stadion
+- - mannschaft a geben b
+- - datum
+- - ergebnis
+- Stadion
+- - name
+- - stadt
+
 ## 2025-09-24
 
 HÜ:

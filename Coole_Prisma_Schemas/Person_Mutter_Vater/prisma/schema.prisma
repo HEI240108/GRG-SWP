@@ -1,20 +1,20 @@
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+    provider = "sqlite"
+    url      = "file:./dev.db"
 }
 
 model Person {
-  id             String   @id @default(cuid())
-  birth          DateTime
-  name           String
-  Father         Person?  @relation("father", fields: [fatherId], references: [id])
-  fatherId       String?
-  ChildrenFather Person[] @relation("father")
-  Mother         Person?  @relation("mother", fields: [motherId], references: [id])
-  motherId       String?
-  ChildrenMother Person[] @relation("mother")
+    id             String   @id @default(cuid())
+    birth          DateTime
+    name           String
+    Father         Person?  @relation(name: "father", fields: [fatherId], references: [id])
+    fatherId       String?
+    ChildrenFather Person[] @relation(name: "father")
+    Mother         Person?  @relation(name: "mother", fields: [motherId], references: [id])
+    motherId       String?
+    ChildrenMother Person[] @relation(name: "mother")
 }
