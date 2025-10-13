@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3ahwii", "3ahwii", "{A767A05C-A118-7A1E-DA4F-E748D10C9868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2025-09-03_intro", "3ahwii\2025-09-03_intro\2025-09-03_intro.csproj", "{D9326C72-40F5-9535-CF7B-53DE1A06AE05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9326C72-40F5-9535-CF7B-53DE1A06AE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9326C72-40F5-9535-CF7B-53DE1A06AE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9326C72-40F5-9535-CF7B-53DE1A06AE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9326C72-40F5-9535-CF7B-53DE1A06AE05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D9326C72-40F5-9535-CF7B-53DE1A06AE05} = {A767A05C-A118-7A1E-DA4F-E748D10C9868}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0717DB09-9B27-451A-A7D7-41A01A8148DA}
+	EndGlobalSection
+EndGlobal
