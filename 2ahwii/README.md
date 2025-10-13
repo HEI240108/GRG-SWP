@@ -1,5 +1,13 @@
 # sj25-26-2ahwii-swp-grg-mja
 
+## 2025-10-13 DEbugger
+
+- HÜ: Debugger in VSCode einrichten
+- Abgabe Screenshot des Debuggers (3 Stück), sowie launch.json
+- Testen (deno test) mit
+- - 10 Primzahlen
+- - 10 Nicht Primzahlen
+
 ## 2025-10-06 Tests
 
 HÜ: Tests weiter automatisieren:
