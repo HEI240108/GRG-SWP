@@ -1,0 +1,38 @@
+datasource db {
+    provider = "sqlite"
+    url      = $DATABASE_URL
+}
+
+generator client {
+    provider = "prisma-client-js"
+    output   = "client"
+    runtime  = "deno"
+}
+
+model Song {
+id
+- name
+- gehört zu EINEM Album
+- hat EINEN oder VIELE Artist
+- dauer
+- genre
+
+## Artist
+
+- id
+- name
+- alben[]
+
+## Album
+
+- id
+- name
+- erscheinungsjahr
+- artists[]
+- songs[]
+
+## Genre
+
+- id
+- name
+- songs[]
