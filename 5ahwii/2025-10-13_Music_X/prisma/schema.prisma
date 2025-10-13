@@ -1,6 +1,6 @@
 datasource db {
     provider = "sqlite"
-    url      = $DATABASE_URL
+    url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -10,9 +10,10 @@ generator client {
 }
 
 model Song {
-id
-- name
-- gehört zu EINEM Album
+id: String @id @default(cuid())
+name: String
+album: Album @relation(fields: [albumId], references: [id])
+albumId: String
 - hat EINEN oder VIELE Artist
 - dauer
 - genre
