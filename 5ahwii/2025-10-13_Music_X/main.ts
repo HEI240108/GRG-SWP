@@ -1,6 +1,8 @@
 import { fakerDE_AT } from "@faker-js/faker";
+import prisma from "./prisma/client/client.ts";
 
 function main() {
+  prisma;
   const musik_faker = fakerDE_AT.music;
   console.log("Random Music Genre:", musik_faker.genre());
   console.log("Random Album:", musik_faker.album());
