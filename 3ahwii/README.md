@@ -1,5 +1,9 @@
 # sj25-26-3ahwii-swp
 
+## Notes für GRG
+
+- OO ist noch einiger Bedarf
+
 ## 2025-09-17
 
 HÜ
